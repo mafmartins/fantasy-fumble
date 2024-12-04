@@ -1,0 +1,18 @@
+[flake8]
+max-line-length = 79
+
+# E303: number of vertical lines (ignored because of class methods)
+# E731: use of lambda expressions (better for sorting keys)
+# E127: visual indentation (aligment of function parameters)
+# W503: line break before binary operator
+# E203: space before : - conflicts with black
+# E266: Too many leading '#' for block comment - conflicts with black
+# N801: class name should use CapWords convention
+# N802: function name should be lowercase
+# N806: variable in function should be lowercase
+; ignore = E303, E731, E127, W503, E203, E266, N801, N802, N806
+
+exclude =
+    */.git/*
+    */__pycache__/*,
+    */migrations/*

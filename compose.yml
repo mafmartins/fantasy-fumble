@@ -1,0 +1,30 @@
+services:
+  ff-website:
+    build: ./fantasy_fumble_website
+    container_name: ff-website
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./fantasy_fumble_website:/usr/src/app
+    depends_on:
+      - ff-db
+    command: sleep infinity
+      # - bash
+      # - -c
+      # - |
+      #   python manage.py runserver 0:8080
+    networks:
+      - ff-network
+  ff-db:
+    image: postgres:17
+    container_name: ff-db
+    environment:
+      POSTGRES_USER: ffuser
+      POSTGRES_PASSWORD: ffpassword
+      POSTGRES_DB: ffdb
+    networks:
+      - ff-network
+
+networks:
+  ff-network:
+    name: ff-network
