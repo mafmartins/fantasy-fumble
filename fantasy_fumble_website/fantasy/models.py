@@ -3,10 +3,9 @@ from django.utils.timezone import now
 
 
 class League(models.Model):
-    espn_id = models.IntegerField()
-    slug = models.CharField(max_length=50)
-    name = models.CharField(max_length=50)
-    abbreviation = models.CharField(max_length=3)
+    slug = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=50, unique=True)
+    abbreviation = models.CharField(max_length=3, unique=True)
     is_active = models.BooleanField()
 
     def __str__(self):
@@ -15,7 +14,7 @@ class League(models.Model):
 
 class Group(models.Model):
     espn_id = models.IntegerField()
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     abbreviation = models.CharField(max_length=3)
     is_conference = models.BooleanField()
     logo = models.ImageField(upload_to="logos", null=True)
@@ -30,26 +29,31 @@ class Group(models.Model):
         return self.name
 
 
-class Season(models.Model):
-    year = models.IntegerField()
-    start_date = models.DateField()
-    end_date = models.DateField()
-    type = models.CharField(
-        max_length=50,
-        choices=[
-            ("pre", "Preseason"),
-            ("reg", "Regular"),
-            ("post", "Postseason"),
-        ],
-    )
-
-    league = models.ForeignKey("League", on_delete=models.CASCADE)
+class SeasonType(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    abbreviation = models.CharField(max_length=5, unique=True)
+    type = models.IntegerField()
 
     def __str__(self):
-        return f"{self.league.name} {self.year}"
+        return self.name
+
+
+class Season(models.Model):
+    year = models.IntegerField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+
+    league = models.ForeignKey("League", on_delete=models.CASCADE)
+    type = models.ForeignKey("SeasonType", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.league.name} {self.year} {self.type} Season"
 
     def is_active(self):
-        return self.start_date <= now().date() <= self.end_date
+        return self.start_date <= now() <= self.end_date
+
+    class Meta:
+        unique_together = ("year", "type", "league")
 
 
 class Week(models.Model):
@@ -83,7 +87,7 @@ class Game(models.Model):
         return f"{self.away_team} @ {self.home_team}"
 
 
-class PlayerGameStats(models.Model):
+class AthletesGamesStats(models.Model):
     # Offensive stats
     passing_touchdowns = models.IntegerField(
         default=0
@@ -167,14 +171,11 @@ class PlayerGameStats(models.Model):
         default=0
     )  # defensive.sacksAssisted + defensive.sacksUnassisted
 
-    player = models.ForeignKey("Player", on_delete=models.CASCADE)
+    athlete = models.ForeignKey("Athlete", on_delete=models.CASCADE)
     game = models.ForeignKey("Game", on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = ("player", "game")
-        indexes = [
-            models.Index(fields=["player", "game"]),
-        ]
+        unique_together = ("athlete", "game")
 
 
 class Team(models.Model):
@@ -197,7 +198,7 @@ class Team(models.Model):
         return self.display_name
 
 
-class Player(models.Model):
+class Athlete(models.Model):
     espn_id = models.IntegerField()
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
