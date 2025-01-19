@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  ff-db:
+    container_name: ff-db
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ff_user
+      POSTGRES_PASSWORD: ff_dev_2025
+      POSTGRES_DB: ff_db
+
+  ff-web:
+    container_name: ff-web
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    command: bash -c "bundle install && yarn install && rails server -b 0.0.0.0"
+    volumes:
+      - .:/rails
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ff-db
+    environment:
+      DATABASE_URL: postgres://ff_user:ff_dev_2025@ff-db:5432/ff_db
+
+volumes:
+  postgres_data:
