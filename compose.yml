@@ -1,26 +1,6 @@
 version: '3.8'
 
 services:
-  ff-db:
-    container_name: ff-db
-    image: postgres:17
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "127.0.0.1:5432:5432"
-    environment:
-      POSTGRES_USER: ff_db_user
-      POSTGRES_PASSWORD: ff_db_2025
-      POSTGRES_DB: ff_db_dev
-
-  ff-db-test:
-    container_name: ff-db-test
-    image: postgres:17
-    environment:
-      POSTGRES_USER: ff_db_user
-      POSTGRES_PASSWORD: ff_db_2025
-      POSTGRES_DB: ff_db_test
-
   ff-web:
     container_name: ff-web
     build:
@@ -42,5 +22,31 @@ services:
       FANTASY_FUMBLE_DATABASE_TEST_USER: ff_db_user
       FANTASY_FUMBLE_DATABASE_TEST_PASS: ff_db_2025
       FANTASY_FUMBLE_DATABASE_TEST_HOST: ff-db-test
+      SELENIUM_HOST: ff-selenium
+
+  ff-db:
+    container_name: ff-db
+    image: postgres:17
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_USER: ff_db_user
+      POSTGRES_PASSWORD: ff_db_2025
+      POSTGRES_DB: ff_db_dev
+
+  ff-db-test:
+    container_name: ff-db-test
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ff_db_user
+      POSTGRES_PASSWORD: ff_db_2025
+      POSTGRES_DB: ff_db_test
+
+  ff-selenium:
+    container_name: ff-selenium
+    image: selenium/standalone-chrome:latest
+    platform: linux/amd64
 volumes:
   postgres_data:

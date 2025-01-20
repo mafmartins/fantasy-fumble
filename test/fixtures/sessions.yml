@@ -1,0 +1,9 @@
+session_one:
+  user: user_one
+  ip_address: 1.1.1.1
+  user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3
+
+session_two:
+  user: user_two
+  ip_address: 2.2.2.2
+  user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3
