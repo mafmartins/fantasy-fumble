@@ -19,23 +19,16 @@ class SessionsTest < ApplicationSystemTestCase
 
     click_on "commit"
 
+    # Redirected to root_url
     assert_text "About Fantasy Fumble"
   end
 
-  # test "should update Session" do
-  #   visit session_url(@session)
-  #   click_on "Edit this session", match: :first
+  test "should destroy Session" do
+    sign_in_as @user
 
-  #   click_on "Update Session"
+    visit root_url(@session)
+    click_on "Sign Out", match: :first
 
-  #   assert_text "Session was successfully updated"
-  #   click_on "Back"
-  # end
-
-  # test "should destroy Session" do
-  #   visit session_url(@session)
-  #   click_on "Destroy this session", match: :first
-
-  #   assert_text "Session was successfully destroyed"
-  # end
+    assert_text "Sign In"
+  end
 end

@@ -23,12 +23,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy session" do
-    post session_url, params: {
-      email_address: @user.email_address,
-      password: "password"
-    }
-
-    assert_redirected_to root_url
+    sign_in_as @user
 
     assert_difference("Session.count", -1) do
       delete session_url

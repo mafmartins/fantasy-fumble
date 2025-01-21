@@ -41,8 +41,13 @@
               <a class="nav-link <%= active_page "points_calculator", @page_name %>" href="/points-calculator">Points Calculator</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <a href="<%= new_session_path%>" class="btn btn-outline-success" role="button">Sign In</a>
+          <form class="d-flex" action="<%= session_path %>" method="delete">
+            <% if authenticated? %>
+              <%= button_to "Sign Out", session_path, class: "btn btn-outline-success"  %>
+            <% else %>
+              <%= link_to "Sign In", new_session_path, class: "btn btn-outline-success", role: "button" %>
+            <% end %>
+
           </form>
         </div>
       </div>
