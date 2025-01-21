@@ -3,7 +3,7 @@ require_relative "../config/environment"
 require "rails/test_help"
 
 Capybara.server_host = "0.0.0.0"
-Capybara.app_host = "http://#{ENV.fetch("HOSTNAME", "172.17.0.1")}:#{Capybara.server_port}"
+Capybara.app_host = "http://#{IPSocket.getaddress(Socket.gethostname)}:#{Capybara.server_port}"
 
 module ActiveSupport
   class TestCase
