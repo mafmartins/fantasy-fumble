@@ -3,6 +3,7 @@ require "application_system_test_case"
 class SessionsTest < ApplicationSystemTestCase
   setup do
     @session = sessions(:session_one)
+    @user = users(:user_one)
   end
 
   test "visiting the index" do
@@ -10,15 +11,16 @@ class SessionsTest < ApplicationSystemTestCase
     assert_selector "input", class: "btn"
   end
 
-  # test "should create session" do
-  #   visit sessions_url
-  #   click_on "New session"
+  test "should create session" do
+    visit new_session_url
 
-  #   click_on "Create Session"
+    fill_in "email_address", with: @user.email_address
+    fill_in "password", with: TestEnv::Constants::DEFAULT_PASSWORD
 
-  #   assert_text "Session was successfully created"
-  #   click_on "Back"
-  # end
+    click_on "commit"
+
+    assert_text "About Fantasy Fumble"
+  end
 
   # test "should update Session" do
   #   visit session_url(@session)
