@@ -11,3 +11,8 @@
 main .container {
   padding: 100px 15px 0;
 }
+
+header img.main-logo {
+  max-height: 25px;
+  max-width: 100%;
+}
