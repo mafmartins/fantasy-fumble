@@ -6,13 +6,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.development
-    command: bash -c "bundle install && yarn install && rails server -b 0.0.0.0"
+    # command: bash -c "bundle install && yarn install && rails server -b 0.0.0.0"
+    command: sleep infinity
     volumes:
       - .:/rails
     ports:
       - "3000:3000"
     depends_on:
       - ff-db
+      - ff-db-test
+      - ff-selenium
     environment:
       FANTASY_FUMBLE_DATABASE_DEV_NAME: ff_db_dev
       FANTASY_FUMBLE_DATABASE_DEV_USER: ff_db_user
