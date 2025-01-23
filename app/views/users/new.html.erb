@@ -1,0 +1,60 @@
+<% if flash[:alert] %>
+  <%= tag.div("Erros:", class: "alert alert-danger") do %>
+    <ul>
+      <% flash[:alert].each do |field, errors| %>
+        <li>
+          <%= field.to_s.sub("_", " ").capitalize %>
+          <ul>
+            <% errors.each do |error| %>
+              <li><%= error.to_s.capitalize %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+<%= tag.div(flash[:notice], class: "alert alert-success") if flash[:notice] %>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1>Sign Up</h1>
+    <%= form_with model: @user, class: "border rounded p-5 needs-validation", data: { controller: "sign-up" }, html: {novalidate: 'novalidate'} do |form| %>
+      <div>
+        <label class="form-label">Username</label>
+        <%= form.text_field :username, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your username", value: params[:usernname], class: "form-control" %>
+        <div class="invalid-feedback">
+          Please provide a valid username.
+        </div>
+        <br>
+      </div>
+      <div>
+        <label class="form-label">Email Address</label>
+        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "email_address", placeholder: "Enter your email address", value: params[:email_address], class: "form-control" %>
+        <div class="invalid-feedback">
+          Please provide a valid email address.
+        </div>
+        <br>
+      </div>
+      <div>
+        <label class="form-label">Password</label>
+        <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "form-control", data: { sign_up_target: "password" } %>
+        <div class="invalid-feedback">
+          Please provide a valid password.
+        </div>
+        <br>
+      </div>
+      <div>
+        <label class="form-label">Password Confirmation</label>
+        <%= form.password_field :password_confirmation, required: true, autocomplete: "password-confirmation", placeholder: "Confirm your password", maxlength: 72, class: "form-control", data: { sign_up_target: "passwordConfirmation" } %>
+        <div class="invalid-feedback">
+          The password must be the same.
+        </div>
+        <br>
+      </div>
+      <%= form.submit "Sign Up", class: "btn btn-warning mb-2", data: { action: "click->sign-up#submit" } %>
+      <br>
+      <%= link_to "Forgot password?", new_password_path, class: "d-none" %> <!-- This link is hidden for now -->
+    <% end %>
+  </div>
+</div>

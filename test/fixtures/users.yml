@@ -1,9 +1,11 @@
 <% password_digest = BCrypt::Password.create(TestEnv::Constants::DEFAULT_PASSWORD) %>
 
 user_one:
+  username: user_one
   email_address: one@example.com
   password_digest: <%= password_digest %>
 
 user_two:
+  username: user_two
   email_address: two@example.com
   password_digest: <%= password_digest %>

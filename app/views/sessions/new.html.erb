@@ -1,18 +1,21 @@
 <%= tag.div(flash[:alert], class: "alert alert-danger") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<%= tag.div(flash[:notice], style: "color:green", class: "notice") if flash[:notice] %>
+<% flash[:notice] %>
+<% flash[:notice] %>
 
-<%= tag.div class: "row" do %>
-  <%= tag.div class: "col-lg-6 offset-lg-3" do %>
-    <%= form_with url: session_path, class: "mt-5 border rounded p-5" do |form| %>
-      <%= tag.div class: "mb-3" do %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1>Sign In</h1>
+    <%= form_with url: session_path, class: "border rounded p-5" do |form| %>
+     <div class="mb-3">
         <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "form-control" %><br>
-      <% end %>
-      <%= tag.div class: "mb-3" do %>
+      </div>
+      <div class="mb-3">
         <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "form-control" %><br>
-      <% end %>
+      </div>
       <%= form.submit "Sign in", class: "btn btn-success mb-2" %>
       <br>
       <%= link_to "Forgot password?", new_password_path %>
     <% end %>
-  <% end %>
-<% end %>
+  </div>
+</div>
