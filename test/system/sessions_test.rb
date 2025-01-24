@@ -2,7 +2,6 @@ require "application_system_test_case"
 
 class SessionsTest < ApplicationSystemTestCase
   setup do
-    @session = sessions(:session_one)
     @user = users(:user_one)
   end
 
@@ -26,9 +25,20 @@ class SessionsTest < ApplicationSystemTestCase
   test "should destroy Session" do
     sign_in_as @user
 
-    visit root_url(@session)
+    visit root_url
     click_on "Sign Out", match: :first
 
     assert_text "Sign In"
+  end
+
+  test "should not create session with wrong password" do
+    visit new_session_url
+
+    fill_in "email_address", with: @user.email_address
+    fill_in "password", with: "wrong_password"
+
+    click_on "commit"
+
+    assert_text "Try another email address or password."
   end
 end
