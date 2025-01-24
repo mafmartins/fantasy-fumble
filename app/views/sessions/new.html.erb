@@ -1,7 +1,4 @@
-<%= tag.div(flash[:alert], class: "alert alert-danger") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green", class: "notice") if flash[:notice] %>
-<% flash[:notice] %>
-<% flash[:notice] %>
+<%= render "common/alerts" %>
 
 <div class="row">
   <div class="col-md-6 offset-md-3">

@@ -1,20 +1,4 @@
-<% if flash[:alert] %>
-  <%= tag.div("Erros:", class: "alert alert-danger") do %>
-    <ul>
-      <% flash[:alert].each do |field, errors| %>
-        <li>
-          <%= field.to_s.sub("_", " ").capitalize %>
-          <ul>
-            <% errors.each do |error| %>
-              <li><%= error.to_s.capitalize %></li>
-            <% end %>
-          </ul>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-<% end %>
-<%= tag.div(flash[:notice], class: "alert alert-success") if flash[:notice] %>
+<%= render "common/alerts" %>
 
 <div class="row">
   <div class="col-md-6 offset-md-3">
