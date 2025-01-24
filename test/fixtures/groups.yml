@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  espn_id: 1
+  name: MyString
+  abbreviation: MyString
+  is_conference: false
+  logo: MyString
+  is_active: false
+  parent_id: 1
+
+two:
+  espn_id: 1
+  name: MyString
+  abbreviation: MyString
+  is_conference: false
+  logo: MyString
+  is_active: false
+  parent_id: 1
