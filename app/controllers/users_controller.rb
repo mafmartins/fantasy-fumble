@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update ]
 
   # GET /users/1
+  # TODO - This is not enabled because the route is not defined
   def show
   end
 
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
+  # TODO - This is not enabled because the route is not defined
   def edit
   end
 
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   # PATCH/PUT /users/1
+  # TODO - This is not enabled because the route is not defined
   def update
     if @user.update(user_params_update)
       redirect_to @user, notice: "User was successfully updated."
