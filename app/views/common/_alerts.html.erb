@@ -1,4 +1,4 @@
-<% if flash[:alert] %>
+<% if flash[:alert] && flash[:alert].kind_of?(Array) %>
   <%= tag.div("Erros:", class: "alert alert-danger") do %>
     <ul>
       <% flash[:alert].each do |field, errors| %>
@@ -13,5 +13,7 @@
       <% end %>
     </ul>
   <% end %>
+<% else %>
+  <%= tag.div(flash[:alert], class: "alert alert-danger") if flash[:alert] %>
 <% end %>
 <%= tag.div(flash[:notice], class: "alert alert-success") if flash[:notice] %>
