@@ -4,39 +4,62 @@ require "mocks/espn_nfl_client_http_mock"
 
 class EspnNflClientTest < ActiveSupport::TestCase
   def setup
+    @group_one = groups(:one)
     @client = EspnNfl::Client.new
+    @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
 
-  test "should fetch groups and save them" do
-    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response) do
-      response = @client.fetch_groups
-      assert_not_nil response, "Expected fetch_groups to return a response"
+  test "should fetch all groups and save them" do
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
+      assert_difference("Group.count", +2) do
+        groups_created = @client.fetch_groups
+        assert_not_nil groups_created
+      end
 
-      assert Group.count == 2, "Expected 2 groups to be saved"
-      parent_id = 0
+      parent_id = nil
 
-      Group.where(espn_id: 8).first.tap do |group|
-        assert_not_nil group, "Expected group with espn_id 8 to be saved"
-        assert group.name == "American Football Conference", "Expected group name to be American Football Conference"
-        assert group.abbreviation == "AFC", "Expected group abbreviation to be AFC"
-        assert group.is_conference == true, "Expected group is_conference to be true"
+      Group.where(espn_id: 0).first.tap do |group|
+        assert_not_nil group
+        assert_equal group.name, "American Football Conference"
+        assert_equal group.abbreviation, "AFC"
+        assert_equal group.is_conference, true
         parent_id = group.id
       end
 
-      Group.where(espn_id: 12).first.tap do |group|
-        assert_not_nil group, "Expected group with espn_id 12 to be saved"
-        assert group.name == "AFC North", "Expected group name to be AFC North"
-        assert group.abbreviation == "NORTH", "Expected group abbreviation to be NORTH"
-        assert group.is_conference == false, "Expected group is_conference to be false"
-        assert group.parent_id == parent_id, "Expected group parent_id to be 1"
+      Group.where(espn_id: 11).first.tap do |group|
+        assert_not_nil group
+        assert_equal group.name, "AFC North"
+        assert_equal group.abbreviation, "NORTH"
+        assert_equal group.is_conference, false
+        assert_equal group.parent_id, parent_id
       end
     end
   end
 
-  # test "should fetch teams" do
-  #   response = @client.fetch_teams
-  #   assert_not_nil response, "Expected fetch_teams to return a response"
-  # end
+  test "should fail to fetch groups" do
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_not_found) do
+      assert_raises StandardError do
+        @client.fetch_groups
+      end
+    end
+  end
+
+  test "should fetch teams" do
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
+      assert_difference("Team.count", +1) do
+       teams_created = @client.fetch_groups_teams([ 99 ])
+       assert_not_nil teams_created
+      end
+
+      Team.where(espn_id: 1).first.tap do |team|
+        assert_not_nil team
+        assert_equal team.name, "Bengals"
+        assert_equal team.abbreviation, "CIN"
+        assert_equal team.is_active, true
+        assert_equal team.group_id, @group_one.id
+      end
+    end
+  end
 
   # test "should fetch athletes" do
   #   response = @client.fetch_athletes

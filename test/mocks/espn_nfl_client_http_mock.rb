@@ -1,97 +1,81 @@
-class HttpResponseMock
-  def initialize(response)
+class HttpResponse
+  def initialize(response = nil)
     @response = response
   end
+
   def body
-    @response
+    @response ? @response : default_response
   end
 
   def code
-    "200"
+    default_code
   end
+
+  private
+    def default_response
+      {}
+    end
+
+    def default_code
+      "200"
+    end
+end
+
+class HttpResponseOkMock < HttpResponse
+  private
+    def default_code
+      "200"
+    end
+end
+
+class HttpResponseNotFoundMock < HttpResponse
+  private
+    def default_response
+      {
+        "error" => {
+          "message" => "application error",
+          "code" => 404
+        }
+      }.to_json
+    end
+
+    def default_code
+      "404"
+    end
 end
 
 module EspnNflClientHttpMock
+  def self.load_responses
+    file_path = Rails.root.join("test/fixtures/files/espn_responses.json")
+    JSON.load_file(file_path)
+  end
+
   def self.mock_response(url)
+    responses = load_responses
     case url
-    when /groups\/8\/children/
-      {
-        "count" => 4,
-        "pageIndex" => 1,
-        "pageSize" => 25,
-        "pageCount" => 1,
-        "items" => [
-          {
-            "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/12?lang=en&region=us"
-          }
-        ]
-      }.to_json
-    when /groups\/8/
-      {
-        "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8?lang=en&region=us",
-        "uid" => "s:20~l:28~g:8",
-        "id" => "8",
-        "name" => "American Football Conference",
-        "abbreviation" => "AFC",
-        "season" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
-        },
-        "children" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8/children?lang=en&region=us"
-        },
-        "parent" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/9?lang=en&region=us"
-        },
-        "standings" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8/standings?lang=en&region=us"
-        },
-        "isConference" => true,
-        "slug" => "american-football-conference",
-        "teams" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8/teams?lang=en&region=us"
-        }
-      }.to_json
-    when /groups\/12/
-      {
-        "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/12?lang=en&region=us",
-        "uid" => "s:20~l:28~g:12",
-        "id" => "12",
-        "name" => "AFC North",
-        "abbreviation" => "NORTH",
-        "season" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
-        },
-        "parent" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8?lang=en&region=us"
-        },
-        "standings" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/12/standings?lang=en&region=us"
-        },
-        "isConference" => false,
-        "slug" => "afc-north",
-        "teams" => {
-          "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/12/teams?lang=en&region=us"
-        }
-      }.to_json
+    when /groups\/\d\d\/teams/
+      responses["groups/int/teams"].to_json
+    when /groups\/\d\/children/
+      responses["groups/parent_int/children"].to_json
+    when /groups\/\d\d/
+      responses["groups/child_int"].to_json
+    when /groups\/\d/
+      responses["groups/parent_int"].to_json
     when /groups/
-      {
-        "count" => 2,
-        "pageIndex" => 1,
-        "pageSize" => 25,
-        "pageCount" => 1,
-        "items" => [
-          {
-            "$ref" => "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8?lang=en&region=us"
-          }
-        ]
-      }.to_json
+      responses["groups"].to_json
+    when /teams\/\d/
+      responses["teams/int"].to_json
     else
       {}.to_json
     end
   end
 
-  def self.get_response(url)
+  def self.get_response_ok(url)
     @response = mock_response(url)
-    HttpResponseMock.new(@response)
+    HttpResponseOkMock.new(@response)
+  end
+
+  def self.get_response_not_found(url)
+    HttpResponseNotFoundMock.new
   end
 end

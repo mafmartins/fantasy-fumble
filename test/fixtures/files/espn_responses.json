@@ -1,0 +1,366 @@
+{
+  "groups": {
+    "count": 2,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 1,
+    "items": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0?lang=en&region=us"
+      }
+    ]
+  },
+  "groups/parent_int": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0?lang=en&region=us",
+    "uid": "s:20~l:28~g:8",
+    "id": "0",
+    "name": "American Football Conference",
+    "abbreviation": "AFC",
+    "season": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
+    },
+    "children": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0/children?lang=en&region=us"
+    },
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/9?lang=en&region=us"
+    },
+    "standings": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0/standings?lang=en&region=us"
+    },
+    "isConference": true,
+    "slug": "american-football-conference",
+    "teams": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0/teams?lang=en&region=us"
+    }
+  },
+  "groups/parent_int/children": {
+    "count": 4,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 1,
+    "items": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11?lang=en&region=us"
+      }
+    ]
+  },
+  "groups/child_int": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11?lang=en&region=us",
+    "uid": "s:20~l:28~g:12",
+    "id": "11",
+    "name": "AFC North",
+    "abbreviation": "NORTH",
+    "season": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
+    },
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0?lang=en&region=us"
+    },
+    "standings": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11/standings?lang=en&region=us"
+    },
+    "isConference": false,
+    "slug": "afc-north",
+    "teams": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11/teams?lang=en&region=us"
+    }
+  },
+  "groups/int/teams": {
+    "count": 4,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 1,
+    "items": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1?lang=en&region=us"
+      }
+    ]
+  },
+  "teams/int": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1?lang=en&region=us",
+    "id": "1",
+    "guid": "75b8623b-8926-b411-0476-3d3602b78523",
+    "uid": "s:20~l:28~t:4",
+    "alternateIds": {
+      "sdr": "8807"
+    },
+    "slug": "cincinnati-bengals",
+    "location": "Cincinnati",
+    "name": "Bengals",
+    "nickname": "Bengals",
+    "abbreviation": "CIN",
+    "displayName": "Cincinnati Bengals",
+    "shortDisplayName": "Bengals",
+    "color": "fb4f14",
+    "alternateColor": "000000",
+    "isActive": true,
+    "isAllStar": false,
+    "logos": [
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": ["full", "default"],
+        "lastUpdated": "2024-06-25T18:46Z"
+      },
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/cin.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": ["full", "dark"],
+        "lastUpdated": "2024-06-25T18:46Z"
+      },
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": ["full", "scoreboard"],
+        "lastUpdated": "2024-06-25T18:46Z"
+      },
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/cin.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": ["full", "scoreboard", "dark"],
+        "lastUpdated": "2024-06-25T18:46Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/primary_logo_on_white_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "primary_logo_on_white_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/primary_logo_on_black_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "primary_logo_on_black_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/primary_logo_on_primary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "primary_logo_on_primary_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/primary_logo_on_secondary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "primary_logo_on_secondary_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/secondary_logo_on_white_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "secondary_logo_on_white_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/secondary_logo_on_black_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "secondary_logo_on_black_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/secondary_logo_on_primary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "secondary_logo_on_primary_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/75b8623b-8926-b411-0476-3d3602b78523/logos/secondary_logo_on_secondary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": ["full", "secondary_logo_on_secondary_color"],
+        "lastUpdated": "2024-12-03T20:49Z"
+      }
+    ],
+    "record": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/record?lang=en&region=us"
+    },
+    "oddsRecords": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/0/teams/1/odds-records?lang=en&region=us"
+    },
+    "athletes": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/athletes?lang=en&region=us"
+    },
+    "venue": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/venues/3874?lang=en&region=us",
+      "id": "3874",
+      "fullName": "Paycor Stadium",
+      "address": {
+        "city": "Cincinnati",
+        "state": "OH",
+        "zipCode": "45202"
+      },
+      "grass": false,
+      "indoor": false,
+      "images": [
+        {
+          "href": "https://a.espncdn.com/i/venues/nfl/day/3874.jpg",
+          "width": 2000,
+          "height": 1125,
+          "alt": "",
+          "rel": ["full", "day"]
+        },
+        {
+          "href": "https://a.espncdn.com/i/venues/nfl/day/interior/3874.jpg",
+          "width": 2000,
+          "height": 1125,
+          "alt": "",
+          "rel": ["full", "day", "interior"]
+        }
+      ]
+    },
+    "groups": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11?lang=en&region=us"
+    },
+    "ranks": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/ranks?lang=en&region=us"
+    },
+    "statistics": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/statistics?lang=en&region=us"
+    },
+    "leaders": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/leaders?lang=en&region=us"
+    },
+    "links": [
+      {
+        "language": "en-US",
+        "rel": ["clubhouse", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals",
+        "text": "Clubhouse",
+        "shortText": "Clubhouse",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["roster", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/roster/_/name/cin/cincinnati-bengals",
+        "text": "Roster",
+        "shortText": "Roster",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["stats", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/stats/_/name/cin/cincinnati-bengals",
+        "text": "Statistics",
+        "shortText": "Statistics",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["schedule", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/schedule/_/name/cin",
+        "text": "Schedule",
+        "shortText": "Schedule",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["photos", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/photos/_/name/cin",
+        "text": "photos",
+        "shortText": "photos",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["tickets", "desktop", "team"],
+        "href": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
+        "text": "Tickets",
+        "shortText": "Tickets",
+        "isExternal": true,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["draftpicks", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/draft/teams/_/name/cin/cincinnati-bengals",
+        "text": "Draft Picks",
+        "shortText": "Draft Picks",
+        "isExternal": false,
+        "isPremium": true
+      },
+      {
+        "language": "en-US",
+        "rel": ["transactions", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/transactions/_/name/cin",
+        "text": "Transactions",
+        "shortText": "Transactions",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["injuries", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/injuries/_/name/cin",
+        "text": "Injuries",
+        "shortText": "Injuries",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["depthchart", "desktop", "team"],
+        "href": "https://www.espn.com/nfl/team/depth/_/name/cin",
+        "text": "Depth Chart",
+        "shortText": "Depth Chart",
+        "isExternal": false,
+        "isPremium": false
+      }
+    ],
+    "injuries": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/1/injuries?lang=en&region=us"
+    },
+    "notes": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/1/notes?lang=en&region=us"
+    },
+    "againstTheSpreadRecords": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/ats?lang=en&region=us"
+    },
+    "franchise": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/franchises/4?lang=en&region=us"
+    },
+    "depthCharts": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/depthcharts?lang=en&region=us"
+    },
+    "projection": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/projection?lang=en&region=us"
+    },
+    "events": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/events?lang=en&region=us"
+    },
+    "transactions": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/transactions?lang=en&region=us"
+    },
+    "coaches": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/coaches?lang=en&region=us"
+    }
+  }
+}
