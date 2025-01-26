@@ -1,31 +1,14 @@
-# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# one:
-#   espn_id: 1
-#   slug: MyString
-#   abbreviation: MST
-#   display_name: MyString
-#   short_display_name: MyString
-#   name: MyString
-#   nickname: MyString
-#   location: MyString
-#   color: Blue
-#   alternate_color: Red
-#   logo: MyString
-#   is_active: false
-#   group: one
-
-# two:
-#   espn_id: 1
-#   slug: MyString
-#   abbreviation: MST
-#   display_name: MyString
-#   short_display_name: MyString
-#   name: MyString
-#   nickname: MyString
-#   location: MyString
-#   color: Blue
-#   alternate_color: Red
-#   logo: MyString
-#   is_active: false
-#   group: two
+one:
+  espn_id: 99
+  slug: Dummy Team
+  abbreviation: DT
+  display_name: Dummy Team
+  short_display_name: Dummy
+  name: Dummy
+  nickname: Dummy
+  location: Dumland
+  color: fb4f14
+  alternate_color: "000000"
+  logo: null
+  is_active: true
+  group: one
