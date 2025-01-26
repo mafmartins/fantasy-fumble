@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get "points-calculator", to: "points_calculator#index"
-  post "points-calculator", to: "points_calculator#calculate"
+  get "points-calculator", to: "points_calculator#index", as: :points_calculator_index
+  post "points-calculator", to: "points_calculator#calculate", as: :points_calculator_calculate
   resources :users, except: [ :index, :show, :edit, :destroy, :update ]
   resource :session, only: [ :new, :create, :destroy ]
   # resources :passwords, param: :token
