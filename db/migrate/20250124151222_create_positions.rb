@@ -10,5 +10,7 @@ class CreatePositions < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
+    add_index :positions, :name, unique: true
+    add_index :positions, :abbreviation, unique: true
   end
 end

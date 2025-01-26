@@ -3,7 +3,7 @@ class CreateGroups < ActiveRecord::Migration[8.0]
     create_table :groups do |t|
       t.integer :espn_id
       t.string :name
-      t.string :abbreviation, limit: 3
+      t.string :abbreviation, limit: 5
       t.boolean :is_conference
       t.string :logo
       t.boolean :is_active
@@ -12,5 +12,6 @@ class CreateGroups < ActiveRecord::Migration[8.0]
       t.timestamps
     end
     add_index :groups, :name, unique: true
+    add_index :groups, :espn_id, unique: true
   end
 end

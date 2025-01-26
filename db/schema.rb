@@ -34,6 +34,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
     t.bigint "team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["espn_id"], name: "index_athletes_on_espn_id", unique: true
     t.index ["position_id"], name: "index_athletes_on_position_id"
     t.index ["team_id"], name: "index_athletes_on_team_id"
   end
@@ -41,13 +42,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
   create_table "groups", force: :cascade do |t|
     t.integer "espn_id"
     t.string "name"
-    t.string "abbreviation", limit: 3
+    t.string "abbreviation", limit: 5
     t.boolean "is_conference"
     t.string "logo"
     t.boolean "is_active"
     t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["espn_id"], name: "index_groups_on_espn_id", unique: true
     t.index ["name"], name: "index_groups_on_name", unique: true
     t.index ["parent_id"], name: "index_groups_on_parent_id"
   end
@@ -61,6 +63,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
     t.boolean "is_active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["abbreviation"], name: "index_positions_on_abbreviation", unique: true
+    t.index ["name"], name: "index_positions_on_name", unique: true
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -88,7 +92,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
     t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["abbreviation"], name: "index_teams_on_abbreviation", unique: true
+    t.index ["espn_id"], name: "index_teams_on_espn_id", unique: true
     t.index ["group_id"], name: "index_teams_on_group_id"
+    t.index ["name"], name: "index_teams_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

@@ -21,5 +21,6 @@ class CreateAthletes < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
+    add_index :athletes, :espn_id, unique: true
   end
 end

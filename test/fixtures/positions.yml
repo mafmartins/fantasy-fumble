@@ -1,17 +1,17 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  abbreviation: MyString
-  name: MyString
-  is_offense: false
-  is_defense: false
-  is_special_teams: false
-  is_active: false
+# one:
+#   abbreviation: MyString
+#   name: MyString
+#   is_offense: false
+#   is_defense: false
+#   is_special_teams: false
+#   is_active: false
 
-two:
-  abbreviation: MyString
-  name: MyString
-  is_offense: false
-  is_defense: false
-  is_special_teams: false
-  is_active: false
+# two:
+#   abbreviation: MyString
+#   name: MyString
+#   is_offense: false
+#   is_defense: false
+#   is_special_teams: false
+#   is_active: false
