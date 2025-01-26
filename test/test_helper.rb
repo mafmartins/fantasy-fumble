@@ -3,7 +3,7 @@ require "simplecov"
 require_relative "../config/environment"
 require "rails/test_help"
 
-SimpleCov.start
+SimpleCov.start "rails"
 
 Capybara.server_host = "0.0.0.0"
 Capybara.app_host = "http://#{IPSocket.getaddress(Socket.gethostname)}:#{Capybara.server_port}"
