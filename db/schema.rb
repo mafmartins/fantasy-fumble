@@ -59,13 +59,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
     t.string "abbreviation", limit: 3
     t.string "name"
     t.boolean "is_active"
-    t.bigint "position_id"
+    t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["abbreviation"], name: "index_positions_on_abbreviation", unique: true
     t.index ["espn_id"], name: "index_positions_on_espn_id", unique: true
     t.index ["name"], name: "index_positions_on_name", unique: true
-    t.index ["position_id"], name: "index_positions_on_position_id"
+    t.index ["parent_id"], name: "index_positions_on_parent_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -112,7 +112,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
   add_foreign_key "athletes", "positions"
   add_foreign_key "athletes", "teams"
   add_foreign_key "groups", "groups", column: "parent_id"
-  add_foreign_key "positions", "positions"
+  add_foreign_key "positions", "positions", column: "parent_id"
   add_foreign_key "sessions", "users"
   add_foreign_key "teams", "groups"
 end

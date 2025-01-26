@@ -5,7 +5,7 @@ class CreatePositions < ActiveRecord::Migration[8.0]
       t.string :abbreviation, limit: 3
       t.string :name
       t.boolean :is_active
-      t.references :position, foreign_key: { to_table: :positions }
+      t.references :parent, foreign_key: { to_table: :positions }
 
       t.timestamps
     end

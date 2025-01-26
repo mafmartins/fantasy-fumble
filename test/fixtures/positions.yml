@@ -1,17 +1,13 @@
 # # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   abbreviation: MyString
-#   name: MyString
-#   is_offense: false
-#   is_defense: false
-#   is_special_teams: false
-#   is_active: false
+offense:
+  abbreviation: OFF
+  name: Offense
+  is_active: true
+  parent_id: null
 
-# two:
-#   abbreviation: MyString
-#   name: MyString
-#   is_offense: false
-#   is_defense: false
-#   is_special_teams: false
-#   is_active: false
+wider_receiver:
+  abbreviation: WR
+  name: Wide Receiver
+  is_active: true
+  parent_id: offense (Position)
