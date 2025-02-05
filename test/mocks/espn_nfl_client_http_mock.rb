@@ -63,8 +63,22 @@ module EspnNflClientHttpMock
       responses["groups/parent_int"].to_json
     when /groups/
       responses["groups"].to_json
+    when /teams\/\d*\/athletes\?limit\=1000\&page\=1/
+      responses["teams/int/athletes?page=1"].to_json
+    when /teams\/\d*\/athletes\?limit\=1000\&page\=2/
+      responses["teams/int/athletes?page=2"].to_json
     when /teams\/\d/
       responses["teams/int"].to_json
+    when /athletes\/1/
+      responses["athletes/1"].to_json
+    when /athletes\/2/
+      responses["athletes/2"].to_json
+    when /positions\/1/
+      responses["positions/1"].to_json
+    when /positions\/70/
+      responses["positions/70"].to_json
+    when /positions/
+      responses["positions"].to_json
     else
       {}.to_json
     end

@@ -362,5 +362,361 @@
     "coaches": {
       "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/coaches?lang=en&region=us"
     }
+  },
+  "teams/int/athletes?page=1": {
+    "count": 2,
+    "pageIndex": 1,
+    "pageSize": 1,
+    "pageCount": 2,
+    "items": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1?lang=en&region=us"
+      }
+    ]
+  },
+  "teams/int/athletes?page=2": {
+    "count": 2,
+    "pageIndex": 2,
+    "pageSize": 1,
+    "pageCount": 2,
+    "items": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/2?lang=en&region=us"
+      }
+    ]
+  },
+  "athletes/1": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1?lang=en&region=us",
+    "id": "1",
+    "uid": "s:20~l:28~a:1",
+    "guid": "6fae708c-9d56-fadf-888b-2a4fcc7db342",
+    "type": "football",
+    "alternateIds": {
+      "sdr": "1"
+    },
+    "firstName": "Micah",
+    "lastName": "Abraham",
+    "fullName": "Micah Abraham",
+    "displayName": "Micah Abraham",
+    "shortName": "M. Abraham",
+    "weight": 185.0,
+    "displayWeight": "185 lbs",
+    "height": 71.0,
+    "displayHeight": "5' 11\"",
+    "age": 24,
+    "dateOfBirth": "2000-12-11T08:00Z",
+    "links": [
+      {
+        "language": "en-US",
+        "rel": ["playercard", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/_/id/1/micah-abraham",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["stats", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/stats/_/id/1/micah-abraham",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["splits", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/splits/_/id/1/micah-abraham",
+        "text": "Splits",
+        "shortText": "Splits",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["gamelog", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/gamelog/_/id/1/micah-abraham",
+        "text": "Game Log",
+        "shortText": "Game Log",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["news", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/news/_/id/1/micah-abraham",
+        "text": "News",
+        "shortText": "News",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["bio", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/bio/_/id/1/micah-abraham",
+        "text": "Bio",
+        "shortText": "Bio",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["overview", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/_/id/1/micah-abraham",
+        "text": "Overview",
+        "shortText": "Overview",
+        "isExternal": false,
+        "isPremium": false
+      }
+    ],
+    "birthPlace": {
+      "city": "Tampa",
+      "state": "FL",
+      "country": "USA"
+    },
+    "college": {
+      "$ref": "http://sports.core.api.espn.com/v2/colleges/276?lang=en&region=us"
+    },
+    "slug": "micah-abraham",
+    "headshot": {
+      "href": "https://a.espncdn.com/i/headshots/nfl/players/full/1.png",
+      "alt": "Micah Abraham"
+    },
+    "jersey": "40",
+    "position": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us",
+      "id": "1",
+      "name": "Wide Receiver",
+      "displayName": "Wide Receiver",
+      "abbreviation": "WR",
+      "leaf": true,
+      "parent": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+      }
+    },
+    "injuries": [],
+    "linked": true,
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+    },
+    "teams": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+      }
+    ],
+    "notes": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1/notes?lang=en&region=us"
+    },
+    "contracts": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1/contracts?lang=en&region=us"
+    },
+    "experience": {
+      "years": 0
+    },
+    "collegeAthlete": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/athletes/1?lang=en&region=us"
+    },
+    "active": true,
+    "eventLog": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1/eventlog?lang=en&region=us"
+    },
+    "draft": {
+      "displayText": "Year: 2024 Round: 6 Pick: 201",
+      "round": 6,
+      "year": 2024,
+      "selection": 201,
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/11?lang=en&region=us"
+      }
+    },
+    "status": {
+      "id": "1",
+      "name": "Active",
+      "type": "active",
+      "abbreviation": "Active"
+    }
+  },
+  "athletes/2": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2?lang=en&region=us",
+    "id": "2",
+    "uid": "s:20~l:28~a:2",
+    "guid": "91c43acb-8c57-fa92-d6e8-6fcaa85a71ac",
+    "type": "football",
+    "alternateIds": {
+      "sdr": "2"
+    },
+    "firstName": "Cal",
+    "lastName": "Adomitis",
+    "fullName": "Cal Adomitis",
+    "displayName": "Cal Adomitis",
+    "shortName": "C. Adomitis",
+    "weight": 238.0,
+    "displayWeight": "238 lbs",
+    "height": 74.0,
+    "displayHeight": "6' 2\"",
+    "age": 26,
+    "dateOfBirth": "1998-07-09T07:00Z",
+    "links": [
+      {
+        "language": "en-US",
+        "rel": ["playercard", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/_/id/2/cal-adomitis",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["stats", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/stats/_/id/2/cal-adomitis",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["splits", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/splits/_/id/2/cal-adomitis",
+        "text": "Splits",
+        "shortText": "Splits",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["gamelog", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/gamelog/_/id/2/cal-adomitis",
+        "text": "Game Log",
+        "shortText": "Game Log",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["news", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/news/_/id/2/cal-adomitis",
+        "text": "News",
+        "shortText": "News",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["bio", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/bio/_/id/2/cal-adomitis",
+        "text": "Bio",
+        "shortText": "Bio",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": ["overview", "desktop", "athlete"],
+        "href": "https://www.espn.com/nfl/player/_/id/2/cal-adomitis",
+        "text": "Overview",
+        "shortText": "Overview",
+        "isExternal": false,
+        "isPremium": false
+      }
+    ],
+    "birthPlace": {
+      "city": "Pittsburgh",
+      "state": "PA",
+      "country": "USA"
+    },
+    "college": {
+      "$ref": "http://sports.core.api.espn.com/v2/colleges/221?lang=en&region=us"
+    },
+    "slug": "cal-adomitis",
+    "headshot": {
+      "href": "https://a.espncdn.com/i/headshots/nfl/players/full/2.png",
+      "alt": "Cal Adomitis"
+    },
+    "jersey": "48",
+    "position": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us",
+      "id": "1",
+      "name": "Wide Receiver",
+      "displayName": "Wide Receiver",
+      "abbreviation": "WR",
+      "leaf": true,
+      "parent": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+      }
+    },
+    "injuries": [],
+    "linked": true,
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+    },
+    "teams": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+      }
+    ],
+    "statistics": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/athletes/2/statistics?lang=en&region=us"
+    },
+    "projections": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/athletes/2/projections?lang=en&region=us"
+    },
+    "notes": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2/notes?lang=en&region=us"
+    },
+    "contracts": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/2/contracts?lang=en&region=us"
+    },
+    "experience": {
+      "years": 3
+    },
+    "collegeAthlete": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/athletes/2?lang=en&region=us"
+    },
+    "active": true,
+    "eventLog": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2/eventlog?lang=en&region=us"
+    },
+    "status": {
+      "id": "1",
+      "name": "Active",
+      "type": "active",
+      "abbreviation": "Active"
+    }
+  },
+  "positions": {
+    "count": 2,
+    "pageIndex": 1,
+    "pageSize": 1,
+    "pageCount": 1,
+    "items": [
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us"
+      },
+      {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+      }
+    ]
+  },
+  "positions/1": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us",
+    "id": "1",
+    "name": "Wide Receiver",
+    "displayName": "Wide Receiver",
+    "abbreviation": "WR",
+    "leaf": true,
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+    }
+  },
+  "positions/70": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us",
+    "id": "70",
+    "name": "Offense",
+    "displayName": "Offense",
+    "abbreviation": "OFF",
+    "leaf": false
   }
 }

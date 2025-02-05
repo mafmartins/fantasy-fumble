@@ -5,6 +5,8 @@ require "mocks/espn_nfl_client_http_mock"
 class EspnNflClientTest < ActiveSupport::TestCase
   def setup
     @group_one = groups(:one)
+    @team_one = teams(:one)
+    @position_wr = positions(:wide_receiver)
     @client = EspnNfl::Client.new
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
@@ -12,8 +14,8 @@ class EspnNflClientTest < ActiveSupport::TestCase
   test "should fetch all groups and save them" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Group.count", +2) do
-        groups_created = @client.fetch_groups
-        assert_not_nil groups_created
+        result = @client.fetch_groups
+        assert_not_nil result
       end
 
       parent_id = nil
@@ -47,8 +49,8 @@ class EspnNflClientTest < ActiveSupport::TestCase
   test "should fetch teams" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Team.count", +1) do
-       teams_created = @client.fetch_groups_teams([ 99 ])
-       assert_not_nil teams_created
+        result = @client.fetch_groups_teams([ @group_one.espn_id ])
+        assert_not_nil result
       end
 
       Team.where(espn_id: 1).first.tap do |team|
@@ -61,13 +63,35 @@ class EspnNflClientTest < ActiveSupport::TestCase
     end
   end
 
-  # test "should fetch athletes" do
-  #   response = @client.fetch_athletes
-  #   assert_not_nil response, "Expected fetch_athletes to return a response"
-  # end
+  test "should fetch positions" do
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
+      response = @client.fetch_positions
+      assert_not_nil response, "Expected fetch_positions to return a response"
+    end
+  end
 
-  # test "should fetch positions" do
-  #   response = @client.fetch_positions
-  #   assert_not_nil response, "Expected fetch_positions to return a response"
-  # end
+  test "should fetch athletes" do
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
+      assert_difference("Athlete.count", +2) do
+        athletes_created = @client.fetch_teams_athletes([ @team_one.espn_id ])
+        assert_not_nil athletes_created
+      end
+
+      Athlete.where(espn_id: 1).first.tap do |athlete|
+        assert_not_nil athlete
+        assert_equal athlete.first_name, "Micah"
+        assert_equal athlete.last_name, "Abraham"
+        assert_equal athlete.position_id, @position_wr.id
+        assert_equal athlete.team_id, @team_one.id
+      end
+
+      Athlete.where(espn_id: 2).first.tap do |athlete|
+        assert_not_nil athlete
+        assert_equal athlete.first_name, "Cal"
+        assert_equal athlete.last_name, "Adomitis"
+        assert_equal athlete.position_id, @position_wr.id
+        assert_equal athlete.team_id, @team_one.id
+      end
+    end
+  end
 end
