@@ -7,14 +7,14 @@ class EspnNflClientTest < ActiveSupport::TestCase
     @group_one = groups(:one)
     @team_one = teams(:one)
     @position_wr = positions(:wide_receiver)
-    @client = EspnNfl::Client.new
+    @updater = EspnNfl::Updater.new
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
 
   test "should fetch all groups and save them" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Group.count", +2) do
-        result = @client.fetch_groups
+        result = @updater.fetch_and_upsert_groups
         assert_not_nil result
       end
 
@@ -41,7 +41,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
   test "should fail to fetch groups" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_not_found) do
       assert_raises StandardError do
-        @client.fetch_groups
+        @updater.fetch_and_upsert_groups
       end
     end
   end
@@ -49,7 +49,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
   test "should fetch teams" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Team.count", +1) do
-        result = @client.fetch_groups_teams([ @group_one.espn_id ])
+        result = @updater.fetch_and_upsert_groups_teams([ @group_one.espn_id ])
         assert_not_nil result
       end
 
@@ -65,7 +65,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
 
   test "should fetch positions" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
-      response = @client.fetch_positions
+      response = @updater.fetch_and_upsert_positions
       assert_not_nil response, "Expected fetch_positions to return a response"
     end
   end
@@ -73,7 +73,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
   test "should fetch athletes" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Athlete.count", +2) do
-        athletes_created = @client.fetch_teams_athletes([ @team_one.espn_id ])
+        athletes_created = @updater.fetch_and_upsert_teams_athletes([ @team_one.espn_id ])
         assert_not_nil athletes_created
       end
 
