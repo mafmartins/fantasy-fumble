@@ -11,7 +11,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
 
-  test "should fetch all groups and save them" do
+  test "should upsert groups" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Group.count", +2) do
         result = @updater.fetch_and_upsert_groups
@@ -38,7 +38,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     end
   end
 
-  test "should fail to fetch groups" do
+  test "should fail to upsert groups" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_not_found) do
       assert_raises StandardError do
         @updater.fetch_and_upsert_groups
@@ -46,7 +46,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     end
   end
 
-  test "should fetch teams" do
+  test "should upsert teams" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Team.count", +1) do
         result = @updater.fetch_and_upsert_groups_teams([ @group_one.espn_id ])
@@ -63,14 +63,14 @@ class EspnNflClientTest < ActiveSupport::TestCase
     end
   end
 
-  test "should fetch positions" do
+  test "should upsert positions" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       response = @updater.fetch_and_upsert_positions
       assert_not_nil response, "Expected fetch_positions to return a response"
     end
   end
 
-  test "should fetch athletes" do
+  test "should upsert athletes" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Athlete.count", +2) do
         athletes_created = @updater.fetch_and_upsert_teams_athletes([ @team_one.espn_id ])
