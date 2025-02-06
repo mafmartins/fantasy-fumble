@@ -42,11 +42,13 @@ module EspnNfl
       total_result = []
       groups_espn_ids.each do |group_espn_id|
         group_teams_refs = @client.fetch_from_ref(@client.group_teams_path(group_espn_id))
-        group_teams_refs.each do |team_ref|
-          team = @client.fetch_from_ref(team_ref["$ref"])
-          team_result = upsert_team(team, group_espn_id)
-          total_result << team_result
+        teams = group_teams_refs.map do |team_ref|
+          @client.fetch_from_ref(team_ref["$ref"])
         end
+        teams_result = upsert_teams(teams, group_espn_id)
+        total_result << teams_result
+
+        raise StandardError, "Error upserting teams" unless teams_result.length == teams.length
       end
       total_result
     end
@@ -111,15 +113,17 @@ module EspnNfl
         upsert_multiple_model(Group, groups_attrs)
       end
 
-      def upsert_team(team, group_espn_id)
-        team_attrs = {
-          espn_id: team["id"],
-          name: team["name"],
-          abbreviation: team["abbreviation"],
-          is_active: team["isActive"],
-          group_id: @models_ids_cache.dig(Group.class.name, group_espn_id) || Group.find_by(espn_id: group_espn_id).id
-        }
-        upsert_model(Team, team_attrs)
+      def upsert_teams(teams, group_espn_id)
+        teams_attrs = teams.map do |team|
+          {
+            espn_id: team["id"],
+            name: team["name"],
+            abbreviation: team["abbreviation"],
+            is_active: team["isActive"],
+            group_id: @models_ids_cache.dig(Group.class.name, group_espn_id) || Group.find_by(espn_id: group_espn_id).id
+          }
+        end
+        upsert_multiple_model(Team, teams_attrs)
       end
 
       def upsert_position(position, parent_id = nil)
