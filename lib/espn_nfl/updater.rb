@@ -45,10 +45,9 @@ module EspnNfl
         teams = group_teams_refs.map do |team_ref|
           @client.fetch_from_ref(team_ref["$ref"])
         end
-        teams_result = upsert_teams(teams, group_espn_id)
-        total_result << teams_result
+        total_result = upsert_teams(teams, group_espn_id)
 
-        raise StandardError, "Error upserting teams" unless teams_result.length == teams.length
+        raise StandardError, "Error upserting teams" unless total_result.length == teams.length
       end
       total_result
     end
@@ -56,11 +55,12 @@ module EspnNfl
     def fetch_and_upsert_positions
       total_result = []
       position_refs = @client.fetch(@client.positions_path)
-      position_refs.each do |position_ref|
-        position = @client.fetch_from_ref(position_ref["$ref"])
-        position_result = upsert_position(position)
-        total_result << position_result
+      positions = position_refs.map do |position_ref|
+        @client.fetch_from_ref(position_ref["$ref"])
       end
+      total_result = upsert_positions(positions)
+
+      raise StandardError, "Error upserting positions" unless total_result.length == positions.length
       total_result
     end
 
@@ -126,21 +126,23 @@ module EspnNfl
         upsert_multiple_model(Team, teams_attrs)
       end
 
-      def upsert_position(position, parent_id = nil)
-        if position.dig("parent")
-          parent_espn_id = position["parent"]["$ref"].split("/").last.to_i
-          parent_position_id = @models_ids_cache.dig(Position.class.name, parent_espn_id) || Position.find_by(espn_id: parent_espn_id).id
-        else
-          parent_position_id = nil
+      def upsert_positions(positions, parent_id = nil)
+        positions_attrs = positions.map do |position|
+          if position.dig("parent")
+            parent_espn_id = position["parent"]["$ref"].split("/").last.to_i
+            parent_position_id = @models_ids_cache.dig(Position.class.name, parent_espn_id) || Position.find_by(espn_id: parent_espn_id).id
+          else
+            parent_position_id = nil
+          end
+          position = {
+            espn_id: position["id"],
+            name: position["name"],
+            abbreviation: position["abbreviation"],
+            is_active: true,
+            parent_id: parent_position_id
+          }
         end
-        position = {
-          espn_id: position["id"],
-          name: position["name"],
-          abbreviation: position["abbreviation"],
-          is_active: true,
-          parent_id: parent_position_id
-        }
-        upsert_model(Position, position)
+        upsert_multiple_model(Position, positions_attrs)
       end
 
       def upsert_athlete(athlete, team_espn_id)
