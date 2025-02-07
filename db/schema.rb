@@ -56,7 +56,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
 
   create_table "positions", force: :cascade do |t|
     t.integer "espn_id"
-    t.string "abbreviation", limit: 5
+    t.string "abbreviation", limit: 6
     t.string "name"
     t.boolean "is_active"
     t.bigint "parent_id"
