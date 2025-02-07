@@ -55,6 +55,8 @@ module EspnNflClientHttpMock
     case url
     when /groups\/\d\d\/teams/
       responses["groups/int/teams"].to_json
+    when /groups\/\d\/teams/
+      responses["groups/int/no_teams"].to_json
     when /groups\/\d\/children/
       responses["groups/parent_int/children"].to_json
     when /groups\/\d\d/

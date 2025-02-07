@@ -43,7 +43,7 @@ module EspnNfl
       groups_espn_ids.each do |group_espn_id|
         group_teams_refs = @client.fetch_from_ref(@client.group_teams_path(group_espn_id))
         teams = group_teams_refs.map do |team_ref|
-          @client.fetch_from_ref(team_ref["$ref"])
+        @client.fetch_from_ref(team_ref["$ref"])
         end
         total_result.push(*upsert_teams(teams, group_espn_id).to_a)
 
@@ -78,23 +78,29 @@ module EspnNfl
       total_result
     end
 
+    def fetch_and_upsert_all
+      groups_result = fetch_and_upsert_groups
+      positions_result = fetch_and_upsert_positions
+      groups_teams_result = fetch_and_upsert_groups_teams(groups_result.map { |group| group["espn_id"] })
+      teams_athletes_result = fetch_and_upsert_teams_athletes(groups_teams_result.map { |team| team["espn_id"] })
+
+      total_result = []
+      total_result.push(*groups_result)
+      total_result.push(*positions_result)
+      total_result.push(*groups_teams_result)
+      total_result.push(*teams_athletes_result)
+      total_result
+    end
+
     private
       def cache_model_id(klass_name, model_espn_id, model_id)
         @models_ids_cache[klass_name][model_espn_id] = model_id
       end
 
-      def upsert_model(klass, attributes)
-        result = klass.upsert(attributes, unique_by: :espn_id, returning: [ :id, :espn_id ])
-        # Throw an error if the upsert fails
-        raise StandardError, "Error upserting model with ESPN ID: #{attributes[:espn_id]}" if result.empty?
-        cache_model_id(klass.name, result.first["espn_id"], result.first["id"])
-        result.first
-      end
-
       def upsert_multiple_model(klass, attrs_list)
         result = klass.upsert_all(attrs_list, unique_by: :espn_id, returning: [ :id, :espn_id ])
 
-        raise StandardError, "Error upserting multiple models" if result.empty?
+        raise StandardError, "Error upserting multiple models" if result.length != attrs_list.length
         result.each do |result|
           cache_model_id(klass.name, result["espn_id"], result["id"])
         end

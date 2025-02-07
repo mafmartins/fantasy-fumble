@@ -94,4 +94,16 @@ class EspnNflClientTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "should upsert all" do
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
+      assert_difference("Group.count", +2) do
+        assert_difference("Team.count", +1) do
+          assert_difference("Athlete.count", +2) do
+            @updater.fetch_and_upsert_all
+          end
+        end
+      end
+    end
+  end
 end
