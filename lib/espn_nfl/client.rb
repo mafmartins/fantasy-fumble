@@ -1,3 +1,5 @@
+require "net/http"
+
 module EspnNfl
   # Client class to fetch data from ESPN NFL API
   # Reference: https://gist.github.com/nntrn/ee26cb2a0716de0947a0a4e9a157bc1c
