@@ -10,10 +10,9 @@ class CreateAthletes < ActiveRecord::Migration[8.0]
       t.integer :weight
       t.integer :height
       t.integer :age
-      t.date :date_of_birth
+      t.datetime :date_of_birth
       t.integer :experience_years
       t.integer :jersey
-      t.string :college_abbreviation, limit: 3
       t.string :headshot
       t.boolean :is_active
       t.references :position, null: false, foreign_key: true

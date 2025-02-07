@@ -24,10 +24,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
     t.integer "weight"
     t.integer "height"
     t.integer "age"
-    t.date "date_of_birth"
+    t.datetime "date_of_birth"
     t.integer "experience_years"
     t.integer "jersey"
-    t.string "college_abbreviation", limit: 3
     t.string "headshot"
     t.boolean "is_active"
     t.bigint "position_id", null: false
