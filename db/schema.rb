@@ -62,9 +62,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
     t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["abbreviation"], name: "index_positions_on_abbreviation", unique: true
     t.index ["espn_id"], name: "index_positions_on_espn_id", unique: true
-    t.index ["name"], name: "index_positions_on_name", unique: true
     t.index ["parent_id"], name: "index_positions_on_parent_id"
   end
 
