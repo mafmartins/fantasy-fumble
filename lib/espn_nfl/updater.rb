@@ -1,6 +1,9 @@
+require "logger"
+
 module EspnNfl
   class Updater
     def initialize
+      @logger = Logger.new(STDOUT)
       @client = EspnNfl::Client.new
       @models_ids_cache = {
         Group.name => {},
@@ -11,6 +14,8 @@ module EspnNfl
     end
 
     def fetch_and_upsert_groups
+      @logger.info("Fetching groups from ESPN NFL API...")
+
       total_result = []
       groups = []
       groups_children_refs = {}
@@ -35,10 +40,15 @@ module EspnNfl
 
         raise StandardError, "Error upserting group children" unless group_children_result.length == group_children.length
       end
+
+      @logger.info("Finished fetching groups from ESPN NFL API. Result count: #{total_result.length}")
+
       total_result
     end
 
     def fetch_and_upsert_groups_teams(groups_espn_ids)
+      @logger.info("Fetching teams from ESPN NFL API...")
+
       total_result = []
       groups_espn_ids.each do |group_espn_id|
         group_teams_refs = @client.fetch_from_ref(@client.group_teams_path(group_espn_id))
@@ -49,10 +59,15 @@ module EspnNfl
 
         raise StandardError, "Error upserting teams" unless total_result.length == teams.length
       end
+
+      @logger.info("Finished fetching teams from ESPN NFL API. Result count: #{total_result.length}")
+
       total_result
     end
 
     def fetch_and_upsert_positions
+      @logger.info("Fetching positions from ESPN NFL API...")
+
       total_result = []
       position_refs = @client.fetch(@client.positions_path)
       positions = position_refs.map do |position_ref|
@@ -61,10 +76,15 @@ module EspnNfl
       total_result.push(*upsert_positions(positions).to_a)
 
       raise StandardError, "Error upserting positions" unless total_result.length == positions.length
+
+      @logger.info("Finished fetching positions from ESPN NFL API. Result count: #{total_result.length}")
+
       total_result
     end
 
     def fetch_and_upsert_teams_athletes(teams_espn_ids)
+      @logger.info("Fetching athletes from ESPN NFL API...")
+
       total_result = []
       teams_espn_ids.each do |team_espn_id|
         team_athletes_refs = @client.fetch(@client.team_athletes_path(team_espn_id))
@@ -75,10 +95,15 @@ module EspnNfl
 
         raise StandardError, "Error upserting athletes" unless total_result.length == team_athletes.length
       end
+
+      @logger.info("Finished fetching athletes from ESPN NFL API. Result count: #{total_result.length}")
+
       total_result
     end
 
     def fetch_and_upsert_all
+      @logger.info("Starting to fetch data from ESPN NFL API...")
+
       groups_result = fetch_and_upsert_groups
       positions_result = fetch_and_upsert_positions
       groups_teams_result = fetch_and_upsert_groups_teams(groups_result.map { |group| group["espn_id"] })
@@ -89,6 +114,9 @@ module EspnNfl
       total_result.push(*positions_result)
       total_result.push(*groups_teams_result)
       total_result.push(*teams_athletes_result)
+
+      @logger.info("Finished fetching data from ESPN NFL API. Result count: #{total_result.length}")
+
       total_result
     end
 

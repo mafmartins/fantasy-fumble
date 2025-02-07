@@ -1,4 +1,5 @@
 require "net/http"
+require "logger"
 
 module EspnNfl
   # Client class to fetch data from ESPN NFL API
@@ -9,6 +10,7 @@ module EspnNfl
     BASE_URL = "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl"
 
     def initialize(year = nil)
+      @logger = Logger.new(STDOUT)
       # NFL off-season is from February to July
       year = year ? year : Time.now.month > 7 ? Time.now.year : Time.now.year - 1
       @groups_path = "/seasons/#{year}/types/2/groups" # 2 is for Regular Season
@@ -17,6 +19,7 @@ module EspnNfl
 
     def fetch(endpoint, page = 1)
       url = URI("#{BASE_URL}#{endpoint}?limit=1000&page=#{page}")
+      @logger.info("Fetching data from #{url}")
       response = Net::HTTP.get_response(url)
 
       raise StandardError, "Error fetching data: #{response.body}" unless response.code == "200"
