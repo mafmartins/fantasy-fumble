@@ -104,16 +104,18 @@ module EspnNfl
     def fetch_and_upsert_all
       @logger.info("Starting to fetch data from ESPN NFL API...")
 
-      groups_result = fetch_and_upsert_groups
-      positions_result = fetch_and_upsert_positions
-      groups_teams_result = fetch_and_upsert_groups_teams(groups_result.map { |group| group["espn_id"] })
-      teams_athletes_result = fetch_and_upsert_teams_athletes(groups_teams_result.map { |team| team["espn_id"] })
-
       total_result = []
-      total_result.push(*groups_result)
-      total_result.push(*positions_result)
-      total_result.push(*groups_teams_result)
-      total_result.push(*teams_athletes_result)
+      ActiveRecord::Base.transaction do
+        groups_result = fetch_and_upsert_groups
+        positions_result = fetch_and_upsert_positions
+        groups_teams_result = fetch_and_upsert_groups_teams(groups_result.map { |group| group["espn_id"] })
+        teams_athletes_result = fetch_and_upsert_teams_athletes(groups_teams_result.map { |team| team["espn_id"] })
+
+        total_result.push(*groups_result)
+        total_result.push(*positions_result)
+        total_result.push(*groups_teams_result)
+        total_result.push(*teams_athletes_result)
+      end
 
       @logger.info("Finished fetching data from ESPN NFL API. Result count: #{total_result.length}")
 
