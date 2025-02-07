@@ -21,7 +21,7 @@ module EspnNfl
         groups_children_refs[groups.last["id"]] = @client.fetch_from_ref(groups.last["children"]["$ref"])
       end
       groups_result = upsert_groups(groups)
-      total_result << groups_result
+      total_result.push(*groups_result.to_a)
 
       raise StandardError, "Error upserting groups" unless total_result.length == groups.length
 
@@ -31,7 +31,7 @@ module EspnNfl
         end
         group_id = groups_result.to_a.find { |group| group["espn_id"] == group_espn_id.to_i }["id"]
         group_children_result = upsert_groups(group_children, group_id)
-        total_result << group_children_result
+        total_result.push(*group_children_result.to_a)
 
         raise StandardError, "Error upserting group children" unless group_children_result.length == group_children.length
       end
@@ -45,7 +45,7 @@ module EspnNfl
         teams = group_teams_refs.map do |team_ref|
           @client.fetch_from_ref(team_ref["$ref"])
         end
-        total_result = upsert_teams(teams, group_espn_id)
+        total_result.push(*upsert_teams(teams, group_espn_id).to_a)
 
         raise StandardError, "Error upserting teams" unless total_result.length == teams.length
       end
@@ -58,7 +58,7 @@ module EspnNfl
       positions = position_refs.map do |position_ref|
         @client.fetch_from_ref(position_ref["$ref"])
       end
-      total_result = upsert_positions(positions)
+      total_result.push(*upsert_positions(positions).to_a)
 
       raise StandardError, "Error upserting positions" unless total_result.length == positions.length
       total_result
@@ -68,12 +68,14 @@ module EspnNfl
       total_result = []
       teams_espn_ids.each do |team_espn_id|
         team_athletes_refs = @client.fetch(@client.team_athletes_path(team_espn_id))
-        team_athletes_refs.each do |team_athlete_ref|
-          athlete = @client.fetch_from_ref(team_athlete_ref["$ref"])
-          athlete_result = upsert_athlete(athlete, team_espn_id)
-          total_result << athlete_result
+        team_athletes = team_athletes_refs.map do |team_athlete_ref|
+          @client.fetch_from_ref(team_athlete_ref["$ref"])
         end
+        total_result.push(*upsert_athletes(team_athletes, team_espn_id).to_a)
+
+        raise StandardError, "Error upserting athletes" unless total_result.length == team_athletes.length
       end
+      total_result
     end
 
     private
@@ -134,7 +136,7 @@ module EspnNfl
           else
             parent_position_id = nil
           end
-          position = {
+          {
             espn_id: position["id"],
             name: position["name"],
             abbreviation: position["abbreviation"],
@@ -145,20 +147,22 @@ module EspnNfl
         upsert_multiple_model(Position, positions_attrs)
       end
 
-      def upsert_athlete(athlete, team_espn_id)
-        position_id = @models_ids_cache.dig(Position.class.name, athlete["position"]["id"]) || Position.find_by(espn_id: athlete["position"]["id"]).id
-        team_id = @models_ids_cache.dig(Team.class.name, athlete["team"]["id"]) || Team.find_by(espn_id: team_espn_id).id
-        athlete_attrs = {
-          espn_id: athlete["id"],
-          first_name: athlete["firstName"],
-          last_name: athlete["lastName"],
-          display_name: athlete["displayName"],
-          jersey: athlete["jersey"],
-          is_active: athlete["active"],
-          position_id: position_id,
-          team_id: team_id
-        }
-        upsert_model(Athlete, athlete_attrs)
+      def upsert_athletes(athletes, team_espn_id)
+        athletes_attrs = athletes.map do |athlete|
+          position_id = @models_ids_cache.dig(Position.class.name, athlete["position"]["id"]) || Position.find_by(espn_id: athlete["position"]["id"]).id
+          team_id = @models_ids_cache.dig(Team.class.name, athlete["team"]["id"]) || Team.find_by(espn_id: team_espn_id).id
+          {
+            espn_id: athlete["id"],
+            first_name: athlete["firstName"],
+            last_name: athlete["lastName"],
+            display_name: athlete["displayName"],
+            jersey: athlete["jersey"],
+            is_active: athlete["active"],
+            position_id: position_id,
+            team_id: team_id
+          }
+        end
+        upsert_multiple_model(Athlete, athletes_attrs)
       end
   end
 end
