@@ -8,13 +8,14 @@ class EspnNflClientTest < ActiveSupport::TestCase
     @team_one = teams(:one)
     @position_wr = positions(:wide_receiver)
     @client = EspnNfl::Client.new
+    @updater = EspnNfl::Updater.new
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
 
-  test "should fetch all groups and save them" do
+  test "should upsert groups" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Group.count", +2) do
-        result = @client.fetch_groups
+        result = @updater.fetch_and_upsert_groups
         assert_not_nil result
       end
 
@@ -38,18 +39,18 @@ class EspnNflClientTest < ActiveSupport::TestCase
     end
   end
 
-  test "should fail to fetch groups" do
+  test "should fail to upsert groups" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_not_found) do
       assert_raises StandardError do
-        @client.fetch_groups
+        @updater.fetch_and_upsert_groups
       end
     end
   end
 
-  test "should fetch teams" do
+  test "should upsert teams" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Team.count", +1) do
-        result = @client.fetch_groups_teams([ @group_one.espn_id ])
+        result = @updater.fetch_and_upsert_groups_teams([ @group_one.espn_id ])
         assert_not_nil result
       end
 
@@ -63,17 +64,35 @@ class EspnNflClientTest < ActiveSupport::TestCase
     end
   end
 
-  test "should fetch positions" do
+  test "should upsert positions" do
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
-      response = @client.fetch_positions
+      response = @updater.fetch_and_upsert_positions
       assert_not_nil response, "Expected fetch_positions to return a response"
     end
   end
 
-  test "should fetch athletes" do
+  test "should upsert athletes" do
+    athlete1_ref = @espn_mock_responses["teams/int/athletes?page=1"]["items"][0]["$ref"]
+    athlete1_url = @client.ref_to_url(athlete1_ref).to_s
+    Typhoeus.stub(athlete1_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/1"].to_json,
+        code: 200,
+      )
+    end
+
+    athlete2_ref = @espn_mock_responses["teams/int/athletes?page=2"]["items"][0]["$ref"]
+    athlete2_url = @client.ref_to_url(athlete2_ref).to_s
+    Typhoeus.stub(athlete2_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/2"].to_json,
+        code: 200,
+      )
+    end
+
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Athlete.count", +2) do
-        athletes_created = @client.fetch_teams_athletes([ @team_one.espn_id ])
+        athletes_created = @updater.fetch_and_upsert_teams_athletes([ @team_one.espn_id ])
         assert_not_nil athletes_created
       end
 
@@ -91,6 +110,36 @@ class EspnNflClientTest < ActiveSupport::TestCase
         assert_equal athlete.last_name, "Adomitis"
         assert_equal athlete.position_id, @position_wr.id
         assert_equal athlete.team_id, @team_one.id
+      end
+    end
+  end
+
+  test "should upsert all" do
+    athlete1_ref = @espn_mock_responses["teams/int/athletes?page=1"]["items"][0]["$ref"]
+    athlete1_url = @client.ref_to_url(athlete1_ref).to_s
+    Typhoeus.stub(athlete1_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/1"].to_json,
+        code: 200,
+      )
+    end
+
+    athlete2_ref = @espn_mock_responses["teams/int/athletes?page=2"]["items"][0]["$ref"]
+    athlete2_url = @client.ref_to_url(athlete2_ref).to_s
+    Typhoeus.stub(athlete2_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/2"].to_json,
+        code: 200,
+      )
+    end
+
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
+      assert_difference("Group.count", +2) do
+        assert_difference("Team.count", +1) do
+          assert_difference("Athlete.count", +2) do
+            @updater.fetch_and_upsert_all
+          end
+        end
       end
     end
   end

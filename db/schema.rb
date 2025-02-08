@@ -24,10 +24,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
     t.integer "weight"
     t.integer "height"
     t.integer "age"
-    t.date "date_of_birth"
+    t.datetime "date_of_birth"
     t.integer "experience_years"
     t.integer "jersey"
-    t.string "college_abbreviation", limit: 3
     t.string "headshot"
     t.boolean "is_active"
     t.bigint "position_id", null: false
@@ -56,15 +55,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_24_151228) do
 
   create_table "positions", force: :cascade do |t|
     t.integer "espn_id"
-    t.string "abbreviation", limit: 3
+    t.string "abbreviation", limit: 6
     t.string "name"
     t.boolean "is_active"
     t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["abbreviation"], name: "index_positions_on_abbreviation", unique: true
     t.index ["espn_id"], name: "index_positions_on_espn_id", unique: true
-    t.index ["name"], name: "index_positions_on_name", unique: true
     t.index ["parent_id"], name: "index_positions_on_parent_id"
   end
 
