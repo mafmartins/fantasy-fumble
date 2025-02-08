@@ -7,6 +7,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     @group_one = groups(:one)
     @team_one = teams(:one)
     @position_wr = positions(:wide_receiver)
+    @client = EspnNfl::Client.new
     @updater = EspnNfl::Updater.new
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
@@ -71,6 +72,22 @@ class EspnNflClientTest < ActiveSupport::TestCase
   end
 
   test "should upsert athletes" do
+    athlete1_ref = @espn_mock_responses["teams/int/athletes?page=1"]["items"][0]["$ref"]
+    athlete1_url = @client.ref_to_url(athlete1_ref).to_s
+    Typhoeus.stub(athlete1_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/1"].to_json,
+      )
+    end
+
+    athlete2_ref = @espn_mock_responses["teams/int/athletes?page=2"]["items"][0]["$ref"]
+    athlete2_url = @client.ref_to_url(athlete2_ref).to_s
+    Typhoeus.stub(athlete2_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/2"].to_json,
+      )
+    end
+
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Athlete.count", +2) do
         athletes_created = @updater.fetch_and_upsert_teams_athletes([ @team_one.espn_id ])
@@ -96,6 +113,22 @@ class EspnNflClientTest < ActiveSupport::TestCase
   end
 
   test "should upsert all" do
+    athlete1_ref = @espn_mock_responses["teams/int/athletes?page=1"]["items"][0]["$ref"]
+    athlete1_url = @client.ref_to_url(athlete1_ref).to_s
+    Typhoeus.stub(athlete1_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/1"].to_json,
+      )
+    end
+
+    athlete2_ref = @espn_mock_responses["teams/int/athletes?page=2"]["items"][0]["$ref"]
+    athlete2_url = @client.ref_to_url(athlete2_ref).to_s
+    Typhoeus.stub(athlete2_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/2"].to_json,
+      )
+    end
+
     Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
       assert_difference("Group.count", +2) do
         assert_difference("Team.count", +1) do

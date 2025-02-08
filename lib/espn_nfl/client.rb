@@ -36,7 +36,7 @@ module EspnNfl
 
       return response_parsed unless response_json.key?("pageIndex") && response_json["pageIndex"] < response_json["pageCount"]
 
-      response_parsed + fetch(endpoint, page + 1)
+      response_parsed + fetch(path, page + 1)
     end
 
     def fetch_from_ref(ref)
@@ -46,7 +46,9 @@ module EspnNfl
     def fetch_from_refs(refs)
       @logger.info("Fetching data from #{refs.length} refs")
       requests = refs.map do |ref|
-        url = ref_to_url(ref)
+        # Typhoeus does not support URI stubsn that's why we need to convert the ref URI resukt to a string
+        # https://github.com/typhoeus/typhoeus/issues/662
+        url = ref_to_url(ref).to_s
         @logger.info("Queueing request for #{url}")
         request = Typhoeus::Request.new(url)
         @hydra.queue(request)
@@ -69,17 +71,16 @@ module EspnNfl
       "/seasons/#{@year}/teams/#{team_id}/athletes"
     end
 
-    private
-      def ref_to_path(ref)
-        ref.sub("http", "https").sub(BASE_URL, "")
-      end
+    def ref_to_path(ref)
+      ref.sub("http", "https").sub(BASE_URL, "")
+    end
 
-      def path_to_url(path, page = 1)
-        URI("#{BASE_URL}#{path}?limit=1000&page=#{page}")
-      end
+    def path_to_url(path, page = 1)
+      URI("#{BASE_URL}#{path}?limit=1000&page=#{page}")
+    end
 
-      def ref_to_url(ref)
-        path_to_url(ref_to_path(ref))
-      end
+    def ref_to_url(ref)
+      path_to_url(ref_to_path(ref))
+    end
   end
 end
