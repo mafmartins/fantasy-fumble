@@ -92,10 +92,11 @@ module EspnNfl
       total_result = []
       total_athletes = []
       teams_espn_ids.each do |team_espn_id|
-        team_athletes_refs = @client.fetch(@client.team_athletes_path(team_espn_id))
-        team_athletes = team_athletes_refs.map do |team_athlete_ref|
-          @client.fetch_from_ref(team_athlete_ref["$ref"])
+        team_athletes_refs_objs = @client.fetch(@client.team_athletes_path(team_espn_id))
+        team_athletes_refs = team_athletes_refs_objs.map do |team_athlete_ref|
+          team_athlete_ref["$ref"]
         end
+        team_athletes = @client.fetch_from_refs(team_athletes_refs)
         total_athletes.push(*team_athletes)
         total_result.push(*upsert_athletes(team_athletes, team_espn_id).to_a)
       end
@@ -222,10 +223,9 @@ module EspnNfl
             height: athlete["height"],
             age: athlete["age"],
             date_of_birth: athlete["dateOfBirth"],
-            experience_years: athlete["experience"],
+            experience_years: athlete["experience"].dig("years"),
             jersey: athlete["jersey"],
-            college_abbreviation: athlete["college"],
-            headshot: athlete["headshot"],
+            headshot: athlete.dig("headshot", "href"),
             is_active: athlete["active"],
             position_id: position_id,
             team_id: team_id

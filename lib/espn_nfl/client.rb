@@ -1,4 +1,5 @@
 require "net/http"
+require "typhoeus"
 require "logger"
 
 module EspnNfl
@@ -11,15 +12,18 @@ module EspnNfl
 
     def initialize(year = nil)
       @logger = Logger.new(STDOUT)
+      @hydra = Typhoeus::Hydra.hydra
       # NFL off-season is from February to July
-      year = year ? year : Time.now.month > 7 ? Time.now.year : Time.now.year - 1
-      @groups_path = "/seasons/#{year}/types/2/groups" # 2 is for Regular Season
+      @year = year ? year : Time.now.month > 7 ? Time.now.year : Time.now.year - 1
+      @groups_path = "/seasons/#{@year}/types/2/groups" # 2 is for Regular Season
       @positions_path = "/positions"
     end
 
-    def fetch(endpoint, page = 1)
-      url = URI("#{BASE_URL}#{endpoint}?limit=1000&page=#{page}")
+    def fetch(path, page = 1)
+      url = path_to_url(path, page)
+
       @logger.info("Fetching data from #{url}")
+
       response = Net::HTTP.get_response(url)
 
       raise StandardError, "Error fetching data: #{response.body}" unless response.code == "200"
@@ -36,8 +40,25 @@ module EspnNfl
     end
 
     def fetch_from_ref(ref)
-      path = ref.sub("http", "https").sub(BASE_URL, "")
-      fetch(path)
+      fetch(ref_to_path(ref))
+    end
+
+    def fetch_from_refs(refs)
+      @logger.info("Fetching data from #{refs.length} refs")
+      requests = refs.map do |ref|
+        url = ref_to_url(ref)
+        @logger.info("Queueing request for #{url}")
+        request = Typhoeus::Request.new(url)
+        @hydra.queue(request)
+        request
+      end
+
+      @hydra.run
+      @logger.info("Finished fetching data from refs")
+
+      requests.map do |request|
+        JSON.parse(request.response.body)
+      end
     end
 
     def group_teams_path(group_id)
@@ -45,7 +66,20 @@ module EspnNfl
     end
 
     def team_athletes_path(team_id)
-      "/teams/#{team_id}/athletes"
+      "/seasons/#{@year}/teams/#{team_id}/athletes"
     end
+
+    private
+      def ref_to_path(ref)
+        ref.sub("http", "https").sub(BASE_URL, "")
+      end
+
+      def path_to_url(path, page = 1)
+        URI("#{BASE_URL}#{path}?limit=1000&page=#{page}")
+      end
+
+      def ref_to_url(ref)
+        path_to_url(ref_to_path(ref))
+      end
   end
 end
