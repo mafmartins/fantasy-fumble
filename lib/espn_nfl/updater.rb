@@ -163,8 +163,16 @@ module EspnNfl
         teams_attrs = teams.map do |team|
           {
             espn_id: team["id"],
-            name: team["name"],
+            slug: team["slug"],
             abbreviation: team["abbreviation"],
+            display_name: team["displayName"],
+            short_display_name: team["shortDisplayName"],
+            name: team["name"],
+            nickname: team["nickname"],
+            location: team["location"],
+            color: team["color"],
+            alternate_color: team["alternateColor"],
+            logo: team.dig("logos", 0, "href"),
             is_active: team["isActive"],
             group_id: @models_ids_cache.dig(Group.name, group_espn_id) || Group.find_by(espn_id: group_espn_id).id
           }
@@ -217,6 +225,7 @@ module EspnNfl
             espn_id: athlete["id"],
             first_name: athlete["firstName"],
             last_name: athlete["lastName"],
+            full_name: athlete["fullName"],
             display_name: athlete["displayName"],
             short_name: athlete["shortName"],
             weight: athlete["weight"],
