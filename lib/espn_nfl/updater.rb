@@ -18,21 +18,21 @@ module EspnNfl
 
       total_result = []
       groups = []
-      groups_children_refs = {}
+      groups_children_links = {}
 
       response = @client.fetch(@client.groups_path)
-      response.each do |group_ref|
-        groups.push(@client.fetch_from_ref(group_ref["$ref"]))
-        groups_children_refs[groups.last["id"]] = @client.fetch_from_ref(groups.last["children"]["$ref"])
+      response.each do |group_link|
+        groups.push(@client.fetch_from_ref(group_link["$ref"]))
+        groups_children_links[groups.last["id"]] = @client.fetch_from_ref(groups.last["children"]["$ref"])
       end
       groups_result = upsert_groups(groups)
       total_result.push(*groups_result.to_a)
 
       raise StandardError, "Error upserting groups" unless total_result.length == groups.length
 
-      groups_children_refs.each do |group_espn_id, group_children_ref|
-        group_children = group_children_ref.map do |group_child_ref|
-          @client.fetch_from_ref(group_child_ref["$ref"])
+      groups_children_links.each do |group_espn_id, group_children_link|
+        group_children = group_children_link.map do |group_child_link|
+          @client.fetch_from_ref(group_child_link["$ref"])
         end
         group_id = groups_result.to_a.find { |group| group["espn_id"] == group_espn_id.to_i }["id"]
         group_children_result = upsert_groups(group_children, group_id)
@@ -52,9 +52,9 @@ module EspnNfl
       total_result = []
       teams_total = []
       groups_espn_ids.each do |group_espn_id|
-        group_teams_refs = @client.fetch_from_ref(@client.group_teams_path(group_espn_id))
-        teams = group_teams_refs.map do |team_ref|
-          @client.fetch_from_ref(team_ref["$ref"])
+        group_teams_links = @client.fetch_from_ref(@client.group_teams_path(group_espn_id))
+        teams = group_teams_links.map do |team_link|
+          @client.fetch_from_ref(team_link["$ref"])
         end
         teams_total.push(*teams)
         total_result.push(*upsert_teams(teams, group_espn_id).to_a)
@@ -71,15 +71,15 @@ module EspnNfl
       @logger.info("Fetching positions from ESPN NFL API...")
 
       total_result = []
-      position_refs = @client.fetch(@client.positions_path)
+      position_links = @client.fetch(@client.positions_path)
 
-      position_refs.each do |position_ref|
-        next if @models_ids_cache.dig(Position.name, position_ref["id"])
+      position_links.each do |position_link|
+        next if @models_ids_cache.dig(Position.name, position_link["id"])
 
-        total_result.push(*fetch_and_upsert_position_and_parents(position_ref))
+        total_result.push(*fetch_and_upsert_position_and_parents(position_link))
       end
 
-      raise StandardError, "Error upserting positions" unless total_result.length == position_refs.length
+      raise StandardError, "Error upserting positions" unless total_result.length == position_links.length
 
       @logger.info("Finished fetching positions from ESPN NFL API. Result count: #{total_result.length}")
 
@@ -92,9 +92,9 @@ module EspnNfl
       total_result = []
       total_athletes = []
       teams_espn_ids.each do |team_espn_id|
-        team_athletes_refs_objs = @client.fetch(@client.team_athletes_path(team_espn_id))
-        team_athletes_refs = team_athletes_refs_objs.map do |team_athlete_ref|
-          team_athlete_ref["$ref"]
+        team_athletes_links = @client.fetch(@client.team_athletes_path(team_espn_id))
+        team_athletes_refs = team_athletes_links.map do |team_athlete_link|
+          team_athlete_link["$ref"]
         end
         team_athletes = @client.fetch_from_refs(team_athletes_refs)
         total_athletes.push(*team_athletes)
@@ -114,9 +114,12 @@ module EspnNfl
       total_result = []
       ActiveRecord::Base.transaction do
         groups_result = fetch_and_upsert_groups
+
         conferences_ids = groups_result.select { |group| group["is_conference"] }.map { |group| group["espn_id"] }
         groups_teams_result = fetch_and_upsert_groups_teams(conferences_ids)
+
         positions_result = fetch_and_upsert_positions
+
         teams_athletes_result = fetch_and_upsert_teams_athletes(groups_teams_result.map { |team| team["espn_id"] })
 
         total_result.push(*groups_result)
@@ -188,12 +191,12 @@ module EspnNfl
         result.first
       end
 
-      def fetch_and_upsert_position_and_parents(position_ref, total_result = [])
-        position_espn_id = position_ref["$ref"].split("/").last.to_i
+      def fetch_and_upsert_position_and_parents(position_link, total_result = [])
+        position_espn_id = position_link["$ref"].split("/").last.to_i
         position_id = @models_ids_cache.dig(Position.name, position_espn_id)
         return total_result if position_id
 
-        position = @client.fetch_from_ref(position_ref["$ref"])
+        position = @client.fetch_from_ref(position_link["$ref"])
 
         if position.dig("parent").nil?
           position = upsert_model(Position, {
