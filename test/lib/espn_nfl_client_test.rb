@@ -77,6 +77,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     Typhoeus.stub(athlete1_url) do
       Typhoeus::Response.new(
         body: @espn_mock_responses["athletes/1"].to_json,
+        code: 200,
       )
     end
 
@@ -85,6 +86,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     Typhoeus.stub(athlete2_url) do
       Typhoeus::Response.new(
         body: @espn_mock_responses["athletes/2"].to_json,
+        code: 200,
       )
     end
 
@@ -118,6 +120,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     Typhoeus.stub(athlete1_url) do
       Typhoeus::Response.new(
         body: @espn_mock_responses["athletes/1"].to_json,
+        code: 200,
       )
     end
 
@@ -126,6 +129,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
     Typhoeus.stub(athlete2_url) do
       Typhoeus::Response.new(
         body: @espn_mock_responses["athletes/2"].to_json,
+        code: 200,
       )
     end
 
