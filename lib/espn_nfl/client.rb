@@ -59,6 +59,7 @@ module EspnNfl
       @logger.info("Finished fetching data from refs")
 
       requests.map do |request|
+        raise StandardError, "Error fetching data: #{request.response.body}" unless request.response.code == 200
         JSON.parse(request.response.body)
       end
     end
