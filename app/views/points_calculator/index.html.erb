@@ -1,2 +1,61 @@
-<h1>PointsCalculator#index</h1>
-<p>Find me in app/views/points_calculator/index.html.erb</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <h5 class="card-header">Roster Selector</h5>
+      <div class="card-body">
+        <form id="roster-selector" method="post" data-controller="roster-selector">
+          <% (1..7).each do |i| %>
+            <div class="row">
+              <label for="team-select-<%= i %>" class="form-label">Athlete <%= i %></label>
+              <div class="col-md-6">
+                  <div class="mb-3">
+                    <select class="form-control" name="teams[]" id="team-select-<%= i %>" data-roster-selector-target="team" data-action="change->roster-selector#teamSelected"
+                    data-roster-selector-index-param="<%= i %>">
+                      <option value="0">Select a team</option>
+                      <% @teams.each do |team|%>
+                        <option value="<%= team.id %>"><%= team.display_name %></option>
+                      <% end %>
+                    </select>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <select class="form-control d-none" name="athletes[]" id="athlete-select-<%= i %>" data-roster-selector-target="athlete">
+                    <option value="0">Select an athlete</option>
+                    <% @athletes.each do |athlete|%>
+                      <option value="<%= athlete.id %>" data-team-id="<%= athlete.team_id%>"><%= athlete.display_name %></option>
+                    <% end %>
+                  </select>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <h5 class="card-header">Settings</h5>
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">Season</label>
+          <select class="form-control" name="season" id="season-select" data-controller="season-selector">
+            <% @seasons.each do |season|%>
+              <option value="<%= season %>"><%= season %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Weeks</label>
+          <select class="form-control" name="week" id="week-select" data-controller="week-selector">
+            <% @weeks.each do |week|%>
+              <option value="<%= week %>"><%= week %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
