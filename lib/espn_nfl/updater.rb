@@ -3,7 +3,7 @@ require "logger"
 module EspnNfl
   class Updater
     def initialize
-      @logger = Logger.new(STDOUT)
+      @logger = Rails.logger
       @client = EspnNfl::Client.new
       @models_ids_cache = {
         Group.name => {},

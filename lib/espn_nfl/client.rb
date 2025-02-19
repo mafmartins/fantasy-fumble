@@ -11,7 +11,7 @@ module EspnNfl
     BASE_URL = "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl"
 
     def initialize(year = nil)
-      @logger = Logger.new(STDOUT)
+      @logger = Rails.logger
       @hydra = Typhoeus::Hydra.hydra
       # NFL off-season is from February to July
       @year = year ? year : Time.now.month > 7 ? Time.now.year : Time.now.year - 1
