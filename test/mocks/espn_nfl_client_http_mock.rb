@@ -71,6 +71,10 @@ module EspnNflClientHttpMock
       responses["teams/int/athletes?page=2"].to_json
     when /teams\/\d/
       responses["teams/int"].to_json
+    when /athletes\/1\/eventlog/
+      responses["athletes/1/eventlog"].to_json
+    when /athletes\/2\/eventlog/
+      responses["athletes/2/eventlog"].to_json
     when /athletes\/1/
       responses["athletes/1"].to_json
     when /athletes\/2/
@@ -81,6 +85,10 @@ module EspnNflClientHttpMock
       responses["positions/70"].to_json
     when /positions/
       responses["positions"].to_json
+    when /events\/1\/competitions\/1\/competitors\/1\/roster\/1\/statistics/
+      responses["events/1/competitions/1/competitors/1/roster/1/statistics/0"].to_json
+    when /events\/1\/competitions\/1\/competitors\/1\/roster\/2\/statistics/
+      responses["events/1/competitions/1/competitors/1/roster/2/statistics/0"].to_json
     else
       {}.to_json
     end
