@@ -1,0 +1,115 @@
+{
+  "half_ppr": {
+    "offensive": {
+      "passing_yards": 0.04,
+      "passing_touchdowns": 4,
+      "interceptions": -2,
+      "rushing_yards": 0.1,
+      "rushing_touchdowns": 6,
+      "receiving_yards": 0.1,
+      "receiving_touchdowns": 6,
+      "receptions": 0.5,
+      "fumbles_lost": -2,
+      "fumbles_touchdowns": 6
+    },
+    "kicking": {
+      "extra_points": 1,
+      "extra_points_missed": -3,
+      "field_goals_made_1_39": 3,
+      "field_goals_made_40_49": 4,
+      "field_goals_made_50+": 5,
+      "field_goals_missed": -1
+    },
+    "defense": {
+      "sacks": 1,
+      "interceptions": 2,
+      "fumbles_recovered": 2,
+      "touchdowns": 6,
+      "safeties": 2,
+      "points_allowed": {
+        "0": 10,
+        "1-6": 7,
+        "7-13": 4,
+        "14-20": 1,
+        "21-27": 0,
+        "28-34": -1,
+        "35+": -4
+      }
+    }
+  },
+  "ppr": {
+    "offensive": {
+      "passing_yards": 0.04,
+      "passing_touchdowns": 4,
+      "interceptions": -2,
+      "rushing_yards": 0.1,
+      "rushing_touchdowns": 6,
+      "receiving_yards": 0.1,
+      "receiving_touchdowns": 6,
+      "receptions": 1,
+      "fumbles_lost": -2,
+      "fumbles_touchdowns": 6
+    },
+    "kicking": {
+      "extra_points": 1,
+      "extra_points_missed": -3,
+      "field_goals_made_1_39": 3,
+      "field_goals_made_40_49": 4,
+      "field_goals_made_50+": 5,
+      "fields_goals_missed": -1
+    },
+    "defense": {
+      "sacks": 1,
+      "interceptions": 2,
+      "fumbles_recovered": 2,
+      "touchdowns": 6,
+      "safeties": 2,
+      "points_allowed": {
+        "0": 10,
+        "1-6": 7,
+        "7-13": 4,
+        "14-20": 1,
+        "21-27": 0,
+        "28-34": -1,
+        "35+": -4
+      }
+    }
+  },
+  "standard": {
+    "offensive": {
+      "passing_yards": 0.04,
+      "passing_touchdowns": 4,
+      "interceptions": -2,
+      "rushing_yards": 0.1,
+      "rushing_touchdowns": 6,
+      "receiving_yards": 0.1,
+      "receiving_touchdowns": 6,
+      "fumbles_lost": -2,
+      "fumbles_touchdowns": 6
+    },
+    "kicking": {
+      "extra_points": 1,
+      "extra_points_missed": -3,
+      "field_goals_made_1_39": 3,
+      "field_goals_made_40_49": 4,
+      "field_goals_made_50+": 5,
+      "fields_goals_missed": -1
+    },
+    "defense": {
+      "sacks": 1,
+      "interceptions": 2,
+      "fumbles_recovered": 2,
+      "touchdowns": 6,
+      "safeties": 2,
+      "points_allowed": {
+        "0": 10,
+        "1-6": 7,
+        "7-13": 4,
+        "14-20": 1,
+        "21-27": 0,
+        "28-34": -1,
+        "35+": -4
+      }
+    }
+  }
+}

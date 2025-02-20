@@ -1,0 +1,166 @@
+{
+  "offense": {
+    "passing_yards": {
+      "espn_category_name": "passing",
+      "category_display_name": "Passing",
+      "espn_stats_names": ["passingYards"],
+      "display_name": "Passing Yards",
+      "abbreviation": "YDS"
+    },
+    "passing_touchdowns": {
+      "espn_category_name": "passing",
+      "category_display_name": "Passing",
+      "espn_stats_names": ["passingTouchdowns"],
+      "display_name": "Passing Touchdowns",
+      "abbreviation": "PTD"
+    },
+    "interceptions": {
+      "espn_category_name": "passing",
+      "category_display_name": "Passing",
+      "espn_stats_names": ["interceptions"],
+      "display_name": "Interceptions",
+      "abbreviation": "INT"
+    },
+    "rushing_yards": {
+      "espn_category_name": "rushing",
+      "category_display_name": "Rushing",
+      "espn_stats_names": ["rushingYards"],
+      "display_name": "Rushing Yards",
+      "abbreviation": "YDS"
+    },
+    "rushing_touchdowns": {
+      "espn_category_name": "rushing",
+      "category_display_name": "Rushing",
+      "espn_stats_names": ["rushingTouchdowns"],
+      "display_name": "Rushing Touchdowns",
+      "abbreviation": "TD"
+    },
+    "receiving_yards": {
+      "espn_category_name": "receiving",
+      "category_display_name": "Receiving",
+      "espn_stats_names": ["receivingYards"],
+      "display_name": "Receiving Yards",
+      "abbreviation": "YDS"
+    },
+    "receiving_touchdowns": {
+      "espn_category_name": "receiving",
+      "category_display_name": "Receiving",
+      "espn_stats_names": ["receivingTouchdowns"],
+      "display_name": "Receiving Touchdowns",
+      "abbreviation": "TD"
+    },
+    "receptions": {
+      "espn_category_name": "receiving",
+      "category_display_name": "Receiving",
+      "espn_stats_names": ["receptions"],
+      "display_name": "Receptions",
+      "abbreviation": "REC"
+    },
+    "fumbles_lost": {
+      "espn_category_name": "general",
+      "category_display_name": "General",
+      "espn_stats_names": ["fumblesLost"],
+      "display_name": "Fumbles Lost",
+      "abbreviation": "FL"
+    },
+    "fumbles_touchdowns": {
+      "espn_category_name": "general",
+      "category_display_name": "General",
+      "espn_stats_names": ["fumblesTouchdowns"],
+      "display_name": "Fumbles Touchdowns",
+      "abbreviation": "FTD"
+    }
+  },
+  "kicking": {
+    "extra_points": {
+      "espn_category_name": "kicking",
+      "category_display_name": "Kicking",
+      "espn_stats_names": ["extraPointsMade"],
+      "display_name": "Extra Points Made",
+      "abbreviation": "XPM"
+    },
+    "extra_points_missed": {
+      "espn_category_name": "kicking",
+      "category_display_name": "Kicking",
+      "espn_stats_names": ["extraPointAttempts", "-extraPointsMade"],
+      "display_name": "Extra Points Missed",
+      "abbreviation": "XPM"
+    },
+    "field_goals_made_1_39": {
+      "espn_category_name": "kicking",
+      "category_display_name": "Kicking",
+      "espn_stats_names": [
+        "fieldGoalsMade1_19",
+        "fieldGoalsMade20_29",
+        "fieldGoalsMade30_39"
+      ],
+      "display_name": "Field Goals Made",
+      "abbreviation": "FGM39"
+    },
+    "field_goals_made_40_49": {
+      "espn_category_name": "kicking",
+      "category_display_name": "Kicking",
+      "espn_stats_names": ["fieldGoalsMade40_49"],
+      "display_name": "Field Goals Made",
+      "abbreviation": "FGM49"
+    },
+    "field_goals_made_50+": {
+      "espn_category_name": "kicking",
+      "category_display_name": "Kicking",
+      "espn_stats_names": ["fieldGoalsMade50"],
+      "display_name": "Field Goals Made",
+      "abbreviation": "FGM50+"
+    },
+    "field_goals_missed": {
+      "espn_category_name": "kicking",
+      "category_display_name": "Kicking",
+      "espn_stats_names": ["fieldGoalAttempts", "-fieldGoalsMade"],
+      "display_name": "Field Goals Missed",
+      "abbreviation": "FGM"
+    }
+  },
+  "defense": {
+    "sacks": {
+      "espn_category_name": "defensive",
+      "category_display_name": "Defense",
+      "espn_stats_names": ["sacks"],
+      "display_name": "Sacks",
+      "abbreviation": "SACK"
+    },
+    "interceptions": {
+      "espn_category_name": "defensiveInterceptions",
+      "category_display_name": "Defense",
+      "espn_stats_names": ["interceptions"],
+      "display_name": "Interceptions",
+      "abbreviation": "INT"
+    },
+    "fumbles_recovered": {
+      "espn_category_name": "general",
+      "category_display_name": "Defense",
+      "espn_stats_names": ["fumblesRecovered"],
+      "display_name": "Fumbles Recovered",
+      "abbreviation": "FR"
+    },
+    "touchdowns": {
+      "espn_category_name": "defensive",
+      "category_display_name": "Defense",
+      "espn_stats_names": ["defensiveTouchdowns"],
+      "display_name": "Touchdowns",
+      "abbreviation": "TD"
+    },
+    "safeties": {
+      "espn_category_name": "defensive",
+      "category_display_name": "Defense",
+      "espn_stats_names": ["safeties"],
+      "display_name": "Safeties",
+      "abbreviation": "SF"
+    },
+    "points_allowed": {
+      "espn_category_name": "defensive",
+      "category_display_name": "Defense",
+      "espn_stats_names": ["pointsAllowed"],
+      "display_name": "Points Allowed",
+      "abbreviation": "PA"
+    }
+  }
+}
