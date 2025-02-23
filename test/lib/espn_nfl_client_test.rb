@@ -188,4 +188,42 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
       )
     end
   end
+
+  test "should fetch athletes" do
+    athlete_ref = @espn_mock_responses["athletes/1"]["$ref"]
+    athlete_url = @client.ref_to_url(athlete_ref).to_s
+    Typhoeus.stub(athlete_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/1"].to_json,
+        code: 200,
+      )
+    end
+
+    @client.fetch_athletes([ 1 ]).tap do |athletes|
+      assert_not_nil athletes
+      assert_equal 1, athletes.length
+
+      assert_equal(
+        {
+          espn_id: 1,
+          first_name: "Micah",
+          last_name: "Abraham",
+          full_name: "Micah Abraham",
+          display_name: "Micah Abraham",
+          short_name: "M. Abraham",
+          weight: 185.0,
+          height: 71.0,
+          age: 24,
+          date_of_birth: "2000-12-11T08:00Z",
+          experience_years: 0,
+          jersey: 40,
+          headshot: "https://a.espncdn.com/i/headshots/nfl/players/full/1.png",
+          position_espn_id: 1,
+          team_espn_id: 4,
+          is_active: true
+        },
+        athletes[0]
+      )
+    end
+  end
 end

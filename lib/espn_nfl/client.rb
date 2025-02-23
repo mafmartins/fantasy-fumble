@@ -26,6 +26,7 @@ module EspnNfl
       @groups_path = "/seasons/#{@year}/types/2/groups" # 2 is for Regular Season
       @positions_path = "/positions"
       @teams_path = "/seasons/#{@year}/teams"
+      @athletes_path = "/seasons/#{@year}/athletes"
     end
 
     ##
@@ -94,6 +95,36 @@ module EspnNfl
       end
     end
 
+    ##
+    # Fetches athletes from the API
+    # @param [Array<Integer>] athletes_ids
+    # @return [Array<Hash>] Array of athletes
+    def fetch_athletes(athletes_ids)
+      athletes_responses = fetch_multiple(athletes_ids.map { |athlete_id| athlete_path(athlete_id) })
+
+      athletes_responses.map do |athlete_response|
+        position_id = get_id_from_position_ref(athlete_response["position"]["$ref"])
+        team_espn_id = get_id_from_team_ref(athlete_response["team"]["$ref"])
+        {
+          espn_id: athlete_response["id"].to_i,
+          first_name: athlete_response["firstName"],
+          last_name: athlete_response["lastName"],
+          full_name: athlete_response["fullName"],
+          display_name: athlete_response["displayName"],
+          short_name: athlete_response["shortName"],
+          weight: athlete_response["weight"],
+          height: athlete_response["height"],
+          age: athlete_response["age"],
+          date_of_birth: athlete_response["dateOfBirth"],
+          experience_years: athlete_response["experience"].dig("years"),
+          jersey: athlete_response["jersey"].to_i,
+          headshot: athlete_response.dig("headshot", "href"),
+          is_active: athlete_response["active"],
+          position_espn_id: position_id,
+          team_espn_id: team_espn_id
+        }
+      end
+    end
 
     ##
     # Generic fetch method to fetch data from the API
@@ -239,6 +270,14 @@ module EspnNfl
     # Converts an athlete ID to a path
     # @param [Integer] athlete_id
     # @return [String]
+    def athlete_path(athlete_id)
+      "#{@athletes_path}/#{athlete_id}"
+    end
+
+    ##
+    # Converts an athlete ID to a path
+    # @param [Integer] athlete_id
+    # @return [String]
     def athletes_eventlog_path(athlete_id)
       "/seasons/#{@year}/athletes/#{athlete_id}/eventlog"
     end
@@ -265,6 +304,14 @@ module EspnNfl
     # @return [Integer]
     def get_id_from_team_ref(ref)
       ref.match(/teams\/(\d+)/)[1].to_i
+    end
+
+    ##
+    # Retrieves the ESPN ID from an athlete ref
+    # @param [String] ref
+    # @return [Integer]
+    def get_id_from_athlete_ref(ref)
+      ref.match(/athletes\/(\d+)/)[1].to_i
     end
   end
 end
