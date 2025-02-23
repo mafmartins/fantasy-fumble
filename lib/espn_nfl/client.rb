@@ -38,7 +38,7 @@ module EspnNfl
       groups_responses.map do |group_response|
         parent_espn_id = get_id_from_group_ref(group_response["parent"]["$ref"]) if group_response.key?("parent")
         {
-          espn_id: group_response["id"],
+          espn_id: group_response["id"].to_i,
           name: group_response["name"],
           abbreviation: group_response["abbreviation"],
           is_conference: group_response["isConference"],
@@ -58,7 +58,7 @@ module EspnNfl
       positions_responses.map do |position_response|
         parent_espn_id = get_id_from_position_ref(position_response["parent"]["$ref"]) if position_response.key?("parent")
         {
-          espn_id: position_response["id"],
+          espn_id: position_response["id"].to_i,
           name: position_response["name"],
           abbreviation: position_response["abbreviation"],
           is_active: true,
@@ -77,7 +77,7 @@ module EspnNfl
       teams_responses.map do |team_response|
         group_espn_id = get_id_from_group_ref(team_response["groups"]["$ref"])
         {
-          espn_id: team_response["id"],
+          espn_id: team_response["id"].to_i,
           slug: team_response["slug"],
           abbreviation: team_response["abbreviation"],
           display_name: team_response["displayName"],

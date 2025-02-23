@@ -24,12 +24,18 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
     @client.fetch_groups([ 0 ]).tap do |groups|
       assert_not_nil groups
       assert_equal 1, groups.length, 1
-      assert_nil groups[0][:id]
-      assert_equal "American Football Conference", groups[0][:name]
-      assert_equal "AFC", groups[0][:abbreviation]
-      assert_equal true, groups[0][:is_conference]
-      assert_equal true, groups[0][:is_active]
-      assert_nil groups[0][:parent]
+
+      assert_equal(
+        {
+          espn_id: 0,
+          name: "American Football Conference",
+          abbreviation: "AFC",
+          is_conference: true,
+          is_active: true,
+          parent_espn_id: nil
+        },
+        groups[0]
+      )
     end
   end
 
@@ -55,12 +61,18 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
     @client.fetch_groups([ 11 ]).tap do |groups|
       assert_not_nil groups
       assert_equal 1, groups.length
-      assert_nil groups[0][:id]
-      assert_equal "AFC North", groups[0][:name]
-      assert_equal "NORTH", groups[0][:abbreviation]
-      assert_equal false, groups[0][:is_conference]
-      assert_equal true, groups[0][:is_active]
-      assert_not_nil groups[0][:parent_espn_id]
+
+      assert_equal(
+        {
+          espn_id: 11,
+          name: "AFC North",
+          abbreviation: "NORTH",
+          is_conference: false,
+          is_active: true,
+          parent_espn_id: 0
+        },
+        groups[0]
+      )
     end
   end
 
@@ -88,19 +100,30 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
     @client.fetch_groups([ 0, 11 ]).tap do |groups|
       assert_not_nil groups
       assert_equal 2, groups.length
-      assert_nil groups[0][:id]
-      assert_equal "American Football Conference", groups[0][:name]
-      assert_equal "AFC", groups[0][:abbreviation]
-      assert_equal true, groups[0][:is_conference]
-      assert_equal true, groups[0][:is_active]
-      assert_nil groups[0][:parent_espn_id]
 
-      assert_nil groups[1][:id]
-      assert_equal "AFC North", groups[1][:name]
-      assert_equal "NORTH", groups[1][:abbreviation]
-      assert_equal false, groups[1][:is_conference]
-      assert_equal true, groups[1][:is_active]
-      assert_equal 0, groups[1][:parent_espn_id]
+      assert_equal(
+        {
+          espn_id: 0,
+          name: "American Football Conference",
+          abbreviation: "AFC",
+          is_conference: true,
+          is_active: true,
+          parent_espn_id: nil
+        },
+        groups[0]
+      )
+
+      assert_equal(
+        {
+          espn_id: 11,
+          name: "AFC North",
+          abbreviation: "NORTH",
+          is_conference: false,
+          is_active: true,
+          parent_espn_id: 0
+        },
+        groups[1]
+      )
     end
   end
 
@@ -117,11 +140,17 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
     @client.fetch_positions([ 1 ]).tap do |positions|
       assert_not_nil positions
       assert_equal 1, positions.length
-      assert_nil positions[0][:id]
-      assert_equal "Wide Receiver", positions[0][:name]
-      assert_equal "WR", positions[0][:abbreviation]
-      assert_equal true, positions[0][:is_active]
-      assert_equal 70, positions[0][:parent_espn_id]
+
+      assert_equal(
+        {
+          espn_id: 1,
+          name: "Wide Receiver",
+          abbreviation: "WR",
+          is_active: true,
+          parent_espn_id: 70
+        },
+        positions[0]
+      )
     end
   end
 
@@ -138,11 +167,25 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
     @client.fetch_teams([ 1 ]).tap do |teams|
       assert_not_nil teams
       assert_equal 1, teams.length
-      assert_nil teams[0][:id]
-      assert_equal "Bengals", teams[0][:name]
-      assert_equal "CIN", teams[0][:abbreviation]
-      assert_equal true, teams[0][:is_active]
-      assert_equal 11, teams[0][:group_espn_id]
+
+      assert_equal(
+        {
+          espn_id: 1,
+          slug: "cincinnati-bengals",
+          abbreviation: "CIN",
+          display_name: "Cincinnati Bengals",
+          short_display_name: "Bengals",
+          name: "Bengals",
+          nickname: "Bengals",
+          location: "Cincinnati",
+          color: "fb4f14",
+          alternate_color: "000000",
+          logo: "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          is_active: true,
+          group_espn_id: 11
+        },
+        teams[0]
+      )
     end
   end
 end
