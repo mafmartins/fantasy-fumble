@@ -1,6 +1,9 @@
 class HttpResponse
+  attr_reader :mock
+
   def initialize(response = nil)
     @response = response
+    @mock = true
   end
 
   def body
