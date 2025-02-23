@@ -7,7 +7,7 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
     @group_one = groups(:one)
     @team_one = teams(:one)
     @position_wr = positions(:wide_receiver)
-    @client = EspnNfl::Client.new(2024)
+    @client = EspnNfl::Client.new(2024, test: true)
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
 
@@ -122,6 +122,27 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
       assert_equal "WR", positions[0][:abbreviation]
       assert_equal true, positions[0][:is_active]
       assert_equal 70, positions[0][:parent_espn_id]
+    end
+  end
+
+  test "should fetch teams" do
+    team_ref = @espn_mock_responses["teams/int"]["$ref"]
+    team_url = @client.ref_to_url(team_ref).to_s
+    Typhoeus.stub(team_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["teams/int"].to_json,
+        code: 200,
+      )
+    end
+
+    @client.fetch_teams([ 1 ]).tap do |teams|
+      assert_not_nil teams
+      assert_equal 1, teams.length
+      assert_nil teams[0][:id]
+      assert_equal "Bengals", teams[0][:name]
+      assert_equal "CIN", teams[0][:abbreviation]
+      assert_equal true, teams[0][:is_active]
+      assert_equal 11, teams[0][:group_espn_id]
     end
   end
 end
