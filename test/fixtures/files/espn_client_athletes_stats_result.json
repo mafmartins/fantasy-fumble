@@ -1,0 +1,2047 @@
+[
+  {
+    "fumbles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FUM",
+      "name": "fumbles",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "fumbles_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LST",
+      "name": "fumbles_lost",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "fumbles_forced": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FF",
+      "name": "fumbles_forced",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "fumbles_recovered": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FR",
+      "name": "fumbles_recovered",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "fumbles_recovered_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YDS",
+      "name": "fumbles_recovered_yards",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "fumbles_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FTD",
+      "name": "fumbles_touchdowns",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "games_played": {
+      "value": 1.0,
+      "display_value": "1",
+      "abbreviation": "GP",
+      "name": "games_played",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "offensive_two_pt_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "2PTR",
+      "name": "offensive_two_pt_returns",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "offensive_fumbles_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "OFTD",
+      "name": "offensive_fumbles_touchdowns",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "defensive_fumbles_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "DFTD",
+      "name": "defensive_fumbles_touchdowns",
+      "category": "general",
+      "category_display_name": "General",
+      "category_abbreviation": "gen"
+    },
+    "avg_gain": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "AG",
+      "name": "avg_gain",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "completion_pct": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "CMP%",
+      "name": "completion_pct",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "completions": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "CMP",
+      "name": "completions",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "espnqb_rating": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "EQBR",
+      "name": "espnqb_rating",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "interception_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "INT%",
+      "name": "interception_pct",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "interceptions": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "INT",
+      "name": "interceptions",
+      "category": "defensive_interceptions",
+      "category_display_name": "Defensive Interceptions",
+      "category_abbreviation": "defint"
+    },
+    "long_passing": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LNG",
+      "name": "long_passing",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "misc_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "MISC",
+      "name": "misc_yards",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "net_passing_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "NYDS",
+      "name": "net_passing_yards",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "net_passing_yards_per_game": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "NYDS/G",
+      "name": "net_passing_yards_per_game",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "net_total_yards": {
+      "value": -4.0,
+      "display_value": "-4",
+      "abbreviation": "NTYDS",
+      "name": "net_total_yards",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "net_yards_per_game": {
+      "value": -4.0,
+      "display_value": "-4.0",
+      "abbreviation": "CMP",
+      "name": "net_yards_per_game",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "passing_attempts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "ATT",
+      "name": "passing_attempts",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_big_plays": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "BIGP",
+      "name": "passing_big_plays",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_first_downs": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FIRST",
+      "name": "passing_first_downs",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_fumbles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FUM",
+      "name": "passing_fumbles",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_fumbles_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FL",
+      "name": "passing_fumbles_lost",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_touchdown_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "TD%",
+      "name": "passing_touchdown_pct",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PASS",
+      "name": "passing_touchdowns",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "passing_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YDS",
+      "name": "passing_yards",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_yards_after_catch": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PYAC",
+      "name": "passing_yards_after_catch",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_yards_at_catch": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PY@C",
+      "name": "passing_yards_at_catch",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "passing_yards_per_game": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "YDS/G",
+      "name": "passing_yards_per_game",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "qb_rating": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "RTG",
+      "name": "qb_rating",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "sacks": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "SACK",
+      "name": "sacks",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "sack_yards_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "SYL",
+      "name": "sack_yards_lost",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "net_passing_attempts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "NATT",
+      "name": "net_passing_attempts",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "team_games_played": {
+      "value": 1.0,
+      "display_value": "1",
+      "abbreviation": "GP",
+      "name": "team_games_played",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "total_offensive_plays": {
+      "value": 1.0,
+      "display_value": "1",
+      "abbreviation": "OP",
+      "name": "total_offensive_plays",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "total_points": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PTS",
+      "name": "total_points",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "total_points_per_game": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "TP/G",
+      "name": "total_points_per_game",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "total_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TD",
+      "name": "total_touchdowns",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "total_yards": {
+      "value": 111.0,
+      "display_value": "111",
+      "abbreviation": "TYDS",
+      "name": "total_yards",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "total_yards_from_scrimmage": {
+      "value": 111.0,
+      "display_value": "111",
+      "abbreviation": "SCRIM",
+      "name": "total_yards_from_scrimmage",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "two_pt_pass": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "2PTP",
+      "name": "two_pt_pass",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "two_pt_pass_attempts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "2PTPA",
+      "name": "two_pt_pass_attempts",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "yards_from_scrimmage_per_game": {
+      "value": 111.0,
+      "display_value": "111.0",
+      "abbreviation": "SCRIM/G",
+      "name": "yards_from_scrimmage_per_game",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "yards_per_completion": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "CMP",
+      "name": "yards_per_completion",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "yards_per_game": {
+      "value": 111.0,
+      "display_value": "111.0",
+      "abbreviation": "YDS/G",
+      "name": "yards_per_game",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "yards_per_pass_attempt": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "AVG",
+      "name": "yards_per_pass_attempt",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "net_yards_per_pass_attempt": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "NYDS/PA",
+      "name": "net_yards_per_pass_attempt",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "quarterback_rating": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "RAT",
+      "name": "quarterback_rating",
+      "category": "passing",
+      "category_display_name": "Passing",
+      "category_abbreviation": "pass"
+    },
+    "espnrb_rating": {
+      "value": -4.0,
+      "display_value": "-4.00",
+      "abbreviation": "ESPNRB",
+      "name": "espnrb_rating",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "long_rushing": {
+      "value": -4.0,
+      "display_value": "-4",
+      "abbreviation": "LNG",
+      "name": "long_rushing",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "rushing_attempts": {
+      "value": 1.0,
+      "display_value": "1",
+      "abbreviation": "CAR",
+      "name": "rushing_attempts",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "rushing_big_plays": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "BIG",
+      "name": "rushing_big_plays",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "rushing_first_downs": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FD",
+      "name": "rushing_first_downs",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "rushing_fumbles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FUM",
+      "name": "rushing_fumbles",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "rushing_fumbles_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LST",
+      "name": "rushing_fumbles_lost",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "rushing_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RUSH",
+      "name": "rushing_touchdowns",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "rushing_yards": {
+      "value": -4.0,
+      "display_value": "-4",
+      "abbreviation": "YDS",
+      "name": "rushing_yards",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "rushing_yards_per_game": {
+      "value": -4.0,
+      "display_value": "-4.0",
+      "abbreviation": "YDS/G",
+      "name": "rushing_yards_per_game",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "stuffs": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "STF",
+      "name": "stuffs",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "stuff_yards_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "SYDSL",
+      "name": "stuff_yards_lost",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "two_pt_rush": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "2PTR",
+      "name": "two_pt_rush",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "two_pt_rush_attempts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "CMP",
+      "name": "two_pt_rush_attempts",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "yards_per_rush_attempt": {
+      "value": -4.0,
+      "display_value": "-4.0",
+      "abbreviation": "AVG",
+      "name": "yards_per_rush_attempt",
+      "category": "rushing",
+      "category_display_name": "Rushing",
+      "category_abbreviation": "rush"
+    },
+    "espnwr_rating": {
+      "value": 175.0,
+      "display_value": "175.00",
+      "abbreviation": "ESPNWR",
+      "name": "espnwr_rating",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "long_reception": {
+      "value": 39.0,
+      "display_value": "39",
+      "abbreviation": "LNG",
+      "name": "long_reception",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_big_plays": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "BIG",
+      "name": "receiving_big_plays",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_first_downs": {
+      "value": 5.0,
+      "display_value": "5",
+      "abbreviation": "FD",
+      "name": "receiving_first_downs",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_fumbles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FUM",
+      "name": "receiving_fumbles",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_fumbles_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LST",
+      "name": "receiving_fumbles_lost",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_targets": {
+      "value": 15.0,
+      "display_value": "15",
+      "abbreviation": "TGTS",
+      "name": "receiving_targets",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "REC",
+      "name": "receiving_touchdowns",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "receiving_yards": {
+      "value": 115.0,
+      "display_value": "115",
+      "abbreviation": "YDS",
+      "name": "receiving_yards",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_yards_after_catch": {
+      "value": 29.0,
+      "display_value": "29",
+      "abbreviation": "YAC",
+      "name": "receiving_yards_after_catch",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_yards_at_catch": {
+      "value": 86.0,
+      "display_value": "86",
+      "abbreviation": "Y@C",
+      "name": "receiving_yards_at_catch",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receiving_yards_per_game": {
+      "value": 115.0,
+      "display_value": "115.0",
+      "abbreviation": "YDS/G",
+      "name": "receiving_yards_per_game",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "receptions": {
+      "value": 12.0,
+      "display_value": "12",
+      "abbreviation": "REC",
+      "name": "receptions",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "two_pt_reception": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "2PTR",
+      "name": "two_pt_reception",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "two_pt_reception_attempts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "CMP",
+      "name": "two_pt_reception_attempts",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "yards_per_reception": {
+      "value": 9.583,
+      "display_value": "9.6",
+      "abbreviation": "AVG",
+      "name": "yards_per_reception",
+      "category": "receiving",
+      "category_display_name": "Receiving",
+      "category_abbreviation": "rec"
+    },
+    "assist_tackles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "AST",
+      "name": "assist_tackles",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "avg_interception_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "AVG",
+      "name": "avg_interception_yards",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "avg_sack_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "YDS/SACK",
+      "name": "avg_sack_yards",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "avg_stuff_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "YDS/STF",
+      "name": "avg_stuff_yards",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "blocked_field_goal_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "BFGTD",
+      "name": "blocked_field_goal_touchdowns",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "blocked_punt_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "BPTD",
+      "name": "blocked_punt_touchdowns",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "defensive_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TD",
+      "name": "defensive_touchdowns",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "hurries": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "HUR",
+      "name": "hurries",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "kicks_blocked": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KB",
+      "name": "kicks_blocked",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "long_interception": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LNG",
+      "name": "long_interception",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "misc_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "MISCTD",
+      "name": "misc_touchdowns",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "passes_batted_down": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "BATD",
+      "name": "passes_batted_down",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "passes_defended": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PD",
+      "name": "passes_defended",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "qb_hits": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "QB HTS",
+      "name": "qb_hits",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "two_pt_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "2PTR",
+      "name": "two_pt_returns",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "sacks_assisted": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "SCKAST",
+      "name": "sacks_assisted",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "sacks_unassisted": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "UASACK",
+      "name": "sacks_unassisted",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "sack_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "SCKYDS",
+      "name": "sack_yards",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "safeties": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "SAFE",
+      "name": "safeties",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "solo_tackles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "SOLO",
+      "name": "solo_tackles",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "stuff_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "STFYDS",
+      "name": "stuff_yards",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "tackles_for_loss": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TFL",
+      "name": "tackles_for_loss",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "tackles_yards_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "CMP",
+      "name": "tackles_yards_lost",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "total_tackles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TOT",
+      "name": "total_tackles",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "yards_allowed": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YA",
+      "name": "yards_allowed",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "points_allowed": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PA",
+      "name": "points_allowed",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "one_pt_safeties_made": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "OPSM",
+      "name": "one_pt_safeties_made",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "missed_field_goal_return_td": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "MFGRTD",
+      "name": "missed_field_goal_return_td",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "blocked_punt_ez_rec_td": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "BPERTD",
+      "name": "blocked_punt_ez_rec_td",
+      "category": "defensive",
+      "category_display_name": "Defense",
+      "category_abbreviation": "def"
+    },
+    "interception_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TD",
+      "name": "interception_touchdowns",
+      "category": "defensive_interceptions",
+      "category_display_name": "Defensive Interceptions",
+      "category_abbreviation": "defint"
+    },
+    "interception_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YDS",
+      "name": "interception_yards",
+      "category": "defensive_interceptions",
+      "category_display_name": "Defensive Interceptions",
+      "category_abbreviation": "defint"
+    },
+    "avg_kickoff_return_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "YDS/KR",
+      "name": "avg_kickoff_return_yards",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "avg_kickoff_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "YDS/K",
+      "name": "avg_kickoff_yards",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "extra_point_attempts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "XPA",
+      "name": "extra_point_attempts",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "extra_point_pct": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "XP%",
+      "name": "extra_point_pct",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "extra_points_blocked": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "XPB",
+      "name": "extra_points_blocked",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "extra_points_blocked_pct": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "XPB%",
+      "name": "extra_points_blocked_pct",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "extra_points_made": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "XPM",
+      "name": "extra_points_made",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "fair_catches": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FC",
+      "name": "fair_catches",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "fair_catch_pct": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "FC%",
+      "name": "fair_catch_pct",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA",
+      "name": "field_goal_attempts",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts1_19": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA 1-19",
+      "name": "field_goal_attempts1_19",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts20_29": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA 20-29",
+      "name": "field_goal_attempts20_29",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts30_39": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA 30-39",
+      "name": "field_goal_attempts30_39",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts40_49": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA 40-49",
+      "name": "field_goal_attempts40_49",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts50_59": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA 50-59",
+      "name": "field_goal_attempts50_59",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts60_99": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA 60-99",
+      "name": "field_goal_attempts60_99",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempts50": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGA 50+",
+      "name": "field_goal_attempts50",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_attempt_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGAYDS",
+      "name": "field_goal_attempt_yards",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goal_pct": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "FG%",
+      "name": "field_goal_pct",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_blocked": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGB",
+      "name": "field_goals_blocked",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_blocked_pct": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "CMP",
+      "name": "field_goals_blocked_pct",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGM",
+      "name": "field_goals_made",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made1_19": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGM 1-19",
+      "name": "field_goals_made1_19",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made20_29": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGM 20-29",
+      "name": "field_goals_made20_29",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made30_39": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGM 30-39",
+      "name": "field_goals_made30_39",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made40_49": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGM 40-49",
+      "name": "field_goals_made40_49",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made50_59": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGM 50-59",
+      "name": "field_goals_made50_59",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made60_99": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGM 60-99",
+      "name": "field_goals_made60_99",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made50": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "50+",
+      "name": "field_goals_made50",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_made_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGMYDS",
+      "name": "field_goals_made_yards",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "field_goals_missed_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FGMSYD",
+      "name": "field_goals_missed_yards",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "kickoff_ob": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KOB",
+      "name": "kickoff_ob",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "kickoff_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KR",
+      "name": "kickoff_returns",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "kickoff_return_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KRTD",
+      "name": "kickoff_return_touchdowns",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "kickoff_return_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KRYDS",
+      "name": "kickoff_return_yards",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "kickoffs": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "K",
+      "name": "kickoffs",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "kickoff_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KYDS",
+      "name": "kickoff_yards",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "long_field_goal_attempt": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LFGA",
+      "name": "long_field_goal_attempt",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "long_field_goal_made": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LNG",
+      "name": "long_field_goal_made",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "long_kickoff": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LK",
+      "name": "long_kickoff",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "total_kicking_points": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PTS",
+      "name": "total_kicking_points",
+      "category": "kicking",
+      "category_display_name": "Kicking",
+      "category_abbreviation": "kick"
+    },
+    "touchback_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "TB%",
+      "name": "touchback_pct",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "touchbacks": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TB",
+      "name": "touchbacks",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "def_fumble_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "DFR",
+      "name": "def_fumble_returns",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "def_fumble_return_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "DFRYDS",
+      "name": "def_fumble_return_yards",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "fumble_recoveries": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FR",
+      "name": "fumble_recoveries",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "fumble_recovery_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YDS",
+      "name": "fumble_recovery_yards",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "kick_return_fair_catches": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KRFC",
+      "name": "kick_return_fair_catches",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "kick_return_fair_catch_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "KRFC%",
+      "name": "kick_return_fair_catch_pct",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "kick_return_fumbles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KRF",
+      "name": "kick_return_fumbles",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "kick_return_fumbles_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "KRFL",
+      "name": "kick_return_fumbles_lost",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "kick_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "ATT",
+      "name": "kick_returns",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "kick_return_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TD",
+      "name": "kick_return_touchdowns",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "kick_return_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YDS",
+      "name": "kick_return_yards",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "long_kick_return": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LNG",
+      "name": "long_kick_return",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "long_punt_return": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LNG",
+      "name": "long_punt_return",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "misc_fumble_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "MFR",
+      "name": "misc_fumble_returns",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "misc_fumble_return_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "MFRYDS",
+      "name": "misc_fumble_return_yards",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "opp_fumble_recoveries": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "OPFR",
+      "name": "opp_fumble_recoveries",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "opp_fumble_recovery_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "OFRYDS",
+      "name": "opp_fumble_recovery_yards",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "opp_special_team_fumble_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "OPSTFR",
+      "name": "opp_special_team_fumble_returns",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "opp_special_team_fumble_return_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "OFRYDS",
+      "name": "opp_special_team_fumble_return_yards",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_return_fair_catches": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FC",
+      "name": "punt_return_fair_catches",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_return_fair_catch_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "PRFC%",
+      "name": "punt_return_fair_catch_pct",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_return_fumbles": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PRF",
+      "name": "punt_return_fumbles",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_return_fumbles_lost": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PRFL",
+      "name": "punt_return_fumbles_lost",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "ATT",
+      "name": "punt_returns",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punt_returns_started_inside_the10": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PR 10",
+      "name": "punt_returns_started_inside_the10",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_returns_started_inside_the20": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PR 20",
+      "name": "punt_returns_started_inside_the20",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_return_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "TD",
+      "name": "punt_return_touchdowns",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "punt_return_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YDS",
+      "name": "punt_return_yards",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "special_team_fumble_returns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "STFR",
+      "name": "special_team_fumble_returns",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "special_team_fumble_return_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "STFRYD",
+      "name": "special_team_fumble_return_yards",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "yards_per_kick_return": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "AVG",
+      "name": "yards_per_kick_return",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "yards_per_punt_return": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "AVG",
+      "name": "yards_per_punt_return",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "yards_per_return": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "YDS/R",
+      "name": "yards_per_return",
+      "category": "returning",
+      "category_display_name": "Returning",
+      "category_abbreviation": "ret"
+    },
+    "avg_punt_return_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "AVG",
+      "name": "avg_punt_return_yards",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "gross_avg_punt_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "AVG",
+      "name": "gross_avg_punt_yards",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "long_punt": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "LNG",
+      "name": "long_punt",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "net_avg_punt_yards": {
+      "value": 0.0,
+      "display_value": "0.0",
+      "abbreviation": "NET",
+      "name": "net_avg_punt_yards",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PUNTS",
+      "name": "punts",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts_blocked": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PBLK",
+      "name": "punts_blocked",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts_blocked_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "PBLK%",
+      "name": "punts_blocked_pct",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts_inside10": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "P 10",
+      "name": "punts_inside10",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts_inside10_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "P 10%",
+      "name": "punts_inside10_pct",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts_inside20": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "IN20",
+      "name": "punts_inside20",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts_inside20_pct": {
+      "value": 0.0,
+      "display_value": "0.00",
+      "abbreviation": "IN20%",
+      "name": "punts_inside20_pct",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punts_over50": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "P 50+",
+      "name": "punts_over50",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "punt_yards": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "YDS",
+      "name": "punt_yards",
+      "category": "punting",
+      "category_display_name": "Punting",
+      "category_abbreviation": "punt"
+    },
+    "defensive_points": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "DP",
+      "name": "defensive_points",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "field_goals": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "FG",
+      "name": "field_goals",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "kick_extra_points": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PAT",
+      "name": "kick_extra_points",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "misc_points": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "MISP",
+      "name": "misc_points",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "return_touchdowns": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RET",
+      "name": "return_touchdowns",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "total_two_point_convs": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "2PT",
+      "name": "total_two_point_convs",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "passing_touchdowns_of0to9_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PASSTD0TO9",
+      "name": "passing_touchdowns_of0to9_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "passing_touchdowns_of10to19_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PASSTD10TO19",
+      "name": "passing_touchdowns_of10to19_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "passing_touchdowns_of20to29_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PASSTD20TO29",
+      "name": "passing_touchdowns_of20to29_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "passing_touchdowns_of30to39_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PASSTD30TO39",
+      "name": "passing_touchdowns_of30to39_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "passing_touchdowns_of40to49_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PASSTD40TO49",
+      "name": "passing_touchdowns_of40to49_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "passing_touchdowns_of50_plus_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "PASSTD50PLUS",
+      "name": "passing_touchdowns_of50_plus_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "receiving_touchdowns_of0to9_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RECTD0TO9",
+      "name": "receiving_touchdowns_of0to9_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "receiving_touchdowns_of10to19_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RECTD10TO19",
+      "name": "receiving_touchdowns_of10to19_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "receiving_touchdowns_of20to29_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RECTD20TO29",
+      "name": "receiving_touchdowns_of20to29_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "receiving_touchdowns_of30to39_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RECTD30TO39",
+      "name": "receiving_touchdowns_of30to39_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "receiving_touchdowns_of40to49_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RECTD40TO49",
+      "name": "receiving_touchdowns_of40to49_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "receiving_touchdowns_of50_plus_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RECTD50PLUS",
+      "name": "receiving_touchdowns_of50_plus_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "rushing_touchdowns_of0to9_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RUSHTD0TO9",
+      "name": "rushing_touchdowns_of0to9_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "rushing_touchdowns_of10to19_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RUSHTD10TO19",
+      "name": "rushing_touchdowns_of10to19_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "rushing_touchdowns_of20to29_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RUSHTD20TO29",
+      "name": "rushing_touchdowns_of20to29_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "rushing_touchdowns_of30to39_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RUSHTD30TO39",
+      "name": "rushing_touchdowns_of30to39_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "rushing_touchdowns_of40to49_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RUSHTD40TO49",
+      "name": "rushing_touchdowns_of40to49_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    },
+    "rushing_touchdowns_of50_plus_yds": {
+      "value": 0.0,
+      "display_value": "0",
+      "abbreviation": "RUSHTD50PLUS",
+      "name": "rushing_touchdowns_of50_plus_yds",
+      "category": "scoring",
+      "category_display_name": "Scoring",
+      "category_abbreviation": "s"
+    }
+  }
+]

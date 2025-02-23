@@ -129,18 +129,49 @@ module EspnNfl
     ##
     # Fetches athlete's eventlog from the API
     # @param [Integer] athlete_id
-    # @return [Array<Hash>] Array of events
-    def fetch_athlete_eventlog(athlete_id)
-      eventlog_response = fetch(athletes_eventlog_path(athlete_id))
+    # @return [Array<Hash>] Array of eventlogs
+    def fetch_athletes_eventlog(athletes_ids)
+      eventlogs_responses = fetch_multiple(athletes_ids.map { |athlete_id| athlete_eventlog_path(athlete_id) })
 
-      eventlog_response["events"]["items"].each_with_index.map do |event, idx|
-      {
-        event_ref: event["event"]["$ref"],
-        statistics_ref: event["played"]?event["statistics"]["$ref"] : nil,
-        team_espn_id: event["teamId"].to_i,
-        played: event["played"],
-        week: idx + 1
-      }
+      eventlogs_responses.map do |eventlog|
+        eventlog["events"]["items"].each_with_index.map do |event, idx|
+        {
+          event_ref: event["event"]["$ref"],
+          statistics_ref: event["played"]?event["statistics"]["$ref"] : nil,
+          team_espn_id: event["teamId"].to_i,
+          played: event["played"],
+          week: idx + 1
+        }
+      end
+      end
+    end
+
+    ##
+    # Fetches athlete's stats from the API
+    # @param [Array<Array<Integer>>] ids
+    # @return [Hash] Hash of stats
+    # @example
+    #  fetch_athletes_stats([[event_id, team_id, athlete_id], [event_id, team_id, athlete_id]])
+    #  fetch_athletes_stats([[1, 1, 1], [1, 2, 2]])
+    def fetch_athletes_stats(ids)
+      stats_response = fetch_multiple(ids.map { |ids_item| event_athlete_statistics_path(*ids_item) })
+
+      stats_response.map do |stats|
+        athlete_stats = {}
+        stats["splits"]["categories"].each do |category|
+          category["stats"].each do |stat|
+            athlete_stats[stat["name"].underscore.to_sym] = {
+              value: stat["value"],
+              display_value: stat["displayValue"],
+              abbreviation: stat["abbreviation"],
+              name: stat["name"].underscore,
+              category: category["name"].underscore,
+              category_display_name: category["displayName"],
+              category_abbreviation: category["abbreviation"]
+            }
+          end
+        end
+        athlete_stats
       end
     end
 
@@ -293,11 +324,21 @@ module EspnNfl
     end
 
     ##
-    # Converts an athlete ID to a path
+    # Converts an athlete ID to an eventlog path
     # @param [Integer] athlete_id
     # @return [String]
-    def athletes_eventlog_path(athlete_id)
+    def athlete_eventlog_path(athlete_id)
       "/seasons/#{@year}/athletes/#{athlete_id}/eventlog"
+    end
+
+    ##
+    # Converts a team ID, athlete ID and event ID to a statistics path
+    # @param [Integer] team_id
+    # @param [Integer] athlete_id
+    # @param [Integer] event_id
+    # @return [String]
+    def event_athlete_statistics_path(event_id, team_id, athlete_id)
+      "/events/#{event_id}/competitions/#{event_id}/competitors/#{team_id}/roster/#{athlete_id}/statistics/0"
     end
 
     ##

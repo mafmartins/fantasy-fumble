@@ -3,6 +3,8 @@ require "minitest/mock"
 require "mocks/espn_nfl_client_http_mock"
 
 class EspnNflUpdaterTest < ActiveSupport::TestCase
+  make_my_diffs_pretty!
+
   def setup
     @group_one = groups(:one)
     @team_one = teams(:one)
@@ -228,10 +230,19 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
   end
 
   test "should fetch athlete eventlog" do
-    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
-      @client.fetch_athlete_eventlog(1).tap do |eventlog|
-        assert_not_nil eventlog
-        assert_equal(
+    eventlog_ref = @espn_mock_responses["athletes/1/eventlog"]["$ref"]
+    eventlog_url = @client.ref_to_url(eventlog_ref).to_s
+    Typhoeus.stub(eventlog_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["athletes/1/eventlog"].to_json,
+        code: 200,
+      )
+    end
+
+    @client.fetch_athletes_eventlog([ 1 ]).tap do |eventlog|
+      assert_not_nil eventlog
+      assert_equal(
+        [
           [
             {
               event_ref: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1?lang=en&region=us",
@@ -247,10 +258,29 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
               played: false,
               week: 2
             }
-          ],
-          eventlog
-        )
-      end
+          ]
+        ],
+        eventlog
+      )
+    end
+  end
+
+  test "should fetch athlete statistics" do
+    stats_ref = @espn_mock_responses["events/1/competitions/1/competitors/1/roster/1/statistics/0"]["$ref"]
+    stats_url = @client.ref_to_url(stats_ref).to_s
+    Typhoeus.stub(stats_url) do
+      Typhoeus::Response.new(
+        body: @espn_mock_responses["events/1/competitions/1/competitors/1/roster/1/statistics/0"].to_json,
+        code: 200,
+      )
+    end
+
+    @client.fetch_athletes_stats([ [ 1, 1, 1 ] ]).tap do |statistics|
+      assert_not_nil statistics
+
+      file_path = Rails.root.join("test/fixtures/files/espn_client_athletes_stats_result.json")
+      expected_stats = JSON.load_file(file_path, symbolize_names: true)
+      assert_equal expected_stats, statistics
     end
   end
 end
