@@ -2,12 +2,12 @@ require "test_helper"
 require "minitest/mock"
 require "mocks/espn_nfl_client_http_mock"
 
-class EspnNflClientTest < ActiveSupport::TestCase
+class EspnNflUpdaterTest < ActiveSupport::TestCase
   def setup
     @group_one = groups(:one)
     @team_one = teams(:one)
     @position_wr = positions(:wide_receiver)
-    @client = EspnNfl::Client.new
+    @client = EspnNfl::Client.new(2024)
     @updater = EspnNfl::Updater.new
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
@@ -96,6 +96,7 @@ class EspnNflClientTest < ActiveSupport::TestCase
         assert_not_nil athletes_created
       end
 
+      # The ahletes first_name, full_name and display_name are updated.
       Athlete.where(espn_id: 1).first.tap do |athlete|
         assert_not_nil athlete
         assert_equal athlete.first_name, "Micah"

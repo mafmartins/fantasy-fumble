@@ -720,7 +720,7 @@
     }
   },
   "athletes/1/eventlog": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/3117251/eventlog?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1/eventlog?lang=en&region=us",
     "teams": {
       "1": {
         "team": {
@@ -762,7 +762,7 @@
     }
   },
   "athletes/2/eventlog": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/3117251/eventlog?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2/eventlog?lang=en&region=us",
     "teams": {
       "1": {
         "team": {
