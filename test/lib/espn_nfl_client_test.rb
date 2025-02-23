@@ -226,4 +226,31 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
       )
     end
   end
+
+  test "should fetch athlete eventlog" do
+    Net::HTTP.stub :get_response, EspnNflClientHttpMock.method(:get_response_ok) do
+      @client.fetch_athlete_eventlog(1).tap do |eventlog|
+        assert_not_nil eventlog
+        assert_equal(
+          [
+            {
+              event_ref: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1?lang=en&region=us",
+              statistics_ref: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1/competitions/1/competitors/1/roster/1/statistics/0?lang=en&region=us",
+              team_espn_id: 1,
+              played: true,
+              week: 1
+            },
+            {
+              event_ref: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/2?lang=en&region=us",
+              statistics_ref: nil,
+              team_espn_id: 1,
+              played: false,
+              week: 2
+            }
+          ],
+          eventlog
+        )
+      end
+    end
+  end
 end

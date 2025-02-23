@@ -127,6 +127,24 @@ module EspnNfl
     end
 
     ##
+    # Fetches athlete's eventlog from the API
+    # @param [Integer] athlete_id
+    # @return [Array<Hash>] Array of events
+    def fetch_athlete_eventlog(athlete_id)
+      eventlog_response = fetch(athletes_eventlog_path(athlete_id))
+
+      eventlog_response["events"]["items"].each_with_index.map do |event, idx|
+      {
+        event_ref: event["event"]["$ref"],
+        statistics_ref: event["played"]?event["statistics"]["$ref"] : nil,
+        team_espn_id: event["teamId"].to_i,
+        played: event["played"],
+        week: idx + 1
+      }
+      end
+    end
+
+    ##
     # Generic fetch method to fetch data from the API
     # @param [String] path
     # @param [Integer] page (default: 1)
