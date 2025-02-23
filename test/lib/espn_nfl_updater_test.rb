@@ -7,7 +7,7 @@ class EspnNflUpdaterTest < ActiveSupport::TestCase
     @group_one = groups(:one)
     @team_one = teams(:one)
     @position_wr = positions(:wide_receiver)
-    @client = EspnNfl::Client.new(2024)
+    @client = EspnNfl::Client.new(2024, test: true)
     @updater = EspnNfl::Updater.new
     @espn_mock_responses = EspnNflClientHttpMock.load_responses
   end
