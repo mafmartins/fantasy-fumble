@@ -12,4 +12,4 @@ wide_receiver:
   abbreviation: WR
   name: Wide Receiver
   is_active: true
-  parent_id: offense (Position)
+  parent_id: <%= ActiveRecord::FixtureSet.identify(:offense) %>
