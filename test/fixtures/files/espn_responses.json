@@ -6,29 +6,29 @@
     "pageCount": 1,
     "items": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0?lang=en&region=us"
+        "$ref": "http://example.com/seasons/2024/types/2/groups/0?lang=en&region=us"
       }
     ]
   },
   "groups/parent_int": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0?lang=en&region=us",
+    "$ref": "http://example.com/seasons/2024/types/2/groups/0?lang=en&region=us",
     "uid": "s:20~l:28~g:8",
     "id": "0",
     "name": "American Football Conference",
     "abbreviation": "AFC",
     "season": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024?lang=en&region=us"
     },
     "children": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0/children?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/groups/0/children?lang=en&region=us"
     },
     "standings": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0/standings?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/groups/0/standings?lang=en&region=us"
     },
     "isConference": true,
     "slug": "american-football-conference",
     "teams": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0/teams?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/groups/0/teams?lang=en&region=us"
     }
   },
   "groups/parent_int/children": {
@@ -38,29 +38,29 @@
     "pageCount": 1,
     "items": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11?lang=en&region=us"
+        "$ref": "http://example.com/seasons/2024/types/2/groups/11?lang=en&region=us"
       }
     ]
   },
   "groups/child_int": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11?lang=en&region=us",
+    "$ref": "http://example.com/seasons/2024/types/2/groups/11?lang=en&region=us",
     "uid": "s:20~l:28~g:12",
     "id": "11",
     "name": "AFC North",
     "abbreviation": "NORTH",
     "season": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024?lang=en&region=us"
     },
     "parent": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/0?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/groups/0?lang=en&region=us"
     },
     "standings": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11/standings?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/groups/11/standings?lang=en&region=us"
     },
     "isConference": false,
     "slug": "afc-north",
     "teams": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11/teams?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/groups/11/teams?lang=en&region=us"
     }
   },
   "groups/int/teams": {
@@ -70,7 +70,7 @@
     "pageCount": 1,
     "items": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1?lang=en&region=us"
+        "$ref": "http://example.com/seasons/2024/teams/1?lang=en&region=us"
       }
     ]
   },
@@ -81,26 +81,26 @@
     "pageCount": 1,
     "items": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us"
+        "$ref": "http://example.com/positions/1?lang=en&region=us"
       },
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+        "$ref": "http://example.com/positions/70?lang=en&region=us"
       }
     ]
   },
   "positions/1": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us",
+    "$ref": "http://example.com/positions/1?lang=en&region=us",
     "id": "1",
     "name": "Wide Receiver",
     "displayName": "Wide Receiver",
     "abbreviation": "WR",
     "leaf": true,
     "parent": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+      "$ref": "http://example.com/positions/70?lang=en&region=us"
     }
   },
   "positions/70": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us",
+    "$ref": "http://example.com/positions/70?lang=en&region=us",
     "id": "70",
     "name": "Offense",
     "displayName": "Offense",
@@ -108,7 +108,7 @@
     "leaf": false
   },
   "teams/int": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1?lang=en&region=us",
+    "$ref": "http://example.com/seasons/2024/teams/1?lang=en&region=us",
     "id": "1",
     "guid": "75b8623b-8926-b411-0476-3d3602b78523",
     "uid": "s:20~l:28~t:4",
@@ -225,16 +225,16 @@
       }
     ],
     "record": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/record?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/teams/1/record?lang=en&region=us"
     },
     "oddsRecords": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/0/teams/1/odds-records?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/0/teams/1/odds-records?lang=en&region=us"
     },
     "athletes": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/athletes?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/1/athletes?lang=en&region=us"
     },
     "venue": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/venues/3874?lang=en&region=us",
+      "$ref": "http://example.com/venues/3874?lang=en&region=us",
       "id": "3874",
       "fullName": "Paycor Stadium",
       "address": {
@@ -262,16 +262,16 @@
       ]
     },
     "groups": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/11?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/groups/11?lang=en&region=us"
     },
     "ranks": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/ranks?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/1/ranks?lang=en&region=us"
     },
     "statistics": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/statistics?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/teams/1/statistics?lang=en&region=us"
     },
     "leaders": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/leaders?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/teams/1/leaders?lang=en&region=us"
     },
     "links": [
       {
@@ -366,31 +366,31 @@
       }
     ],
     "injuries": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/1/injuries?lang=en&region=us"
+      "$ref": "http://example.com/teams/1/injuries?lang=en&region=us"
     },
     "notes": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/1/notes?lang=en&region=us"
+      "$ref": "http://example.com/teams/1/notes?lang=en&region=us"
     },
     "againstTheSpreadRecords": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/1/ats?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/teams/1/ats?lang=en&region=us"
     },
     "franchise": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/franchises/4?lang=en&region=us"
+      "$ref": "http://example.com/franchises/4?lang=en&region=us"
     },
     "depthCharts": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/depthcharts?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/1/depthcharts?lang=en&region=us"
     },
     "projection": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/projection?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/1/projection?lang=en&region=us"
     },
     "events": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/events?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/1/events?lang=en&region=us"
     },
     "transactions": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/transactions?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/1/transactions?lang=en&region=us"
     },
     "coaches": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1/coaches?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/1/coaches?lang=en&region=us"
     }
   },
   "teams/int/athletes?page=1": {
@@ -400,7 +400,7 @@
     "pageCount": 2,
     "items": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1?lang=en&region=us"
+        "$ref": "http://example.com/athletes/1?lang=en&region=us"
       }
     ]
   },
@@ -411,12 +411,12 @@
     "pageCount": 2,
     "items": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/2?lang=en&region=us"
+        "$ref": "http://example.com/athletes/2?lang=en&region=us"
       }
     ]
   },
   "athletes/1": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1?lang=en&region=us",
+    "$ref": "http://example.com/seasons/2024/athletes/1?lang=en&region=us",
     "id": "1",
     "uid": "s:20~l:28~a:1",
     "guid": "6fae708c-9d56-fadf-888b-2a4fcc7db342",
@@ -515,31 +515,31 @@
     },
     "jersey": "40",
     "position": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us",
+      "$ref": "http://example.com/positions/1?lang=en&region=us",
       "id": "1",
       "name": "Wide Receiver",
       "displayName": "Wide Receiver",
       "abbreviation": "WR",
       "leaf": true,
       "parent": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+        "$ref": "http://example.com/positions/70?lang=en&region=us"
       }
     },
     "injuries": [],
     "linked": true,
     "team": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/4?lang=en&region=us"
     },
     "teams": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+        "$ref": "http://example.com/seasons/2024/teams/4?lang=en&region=us"
       }
     ],
     "notes": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1/notes?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/athletes/1/notes?lang=en&region=us"
     },
     "contracts": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1/contracts?lang=en&region=us"
+      "$ref": "http://example.com/athletes/1/contracts?lang=en&region=us"
     },
     "experience": {
       "years": 0
@@ -549,7 +549,7 @@
     },
     "active": true,
     "eventLog": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1/eventlog?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/athletes/1/eventlog?lang=en&region=us"
     },
     "draft": {
       "displayText": "Year: 2024 Round: 6 Pick: 201",
@@ -557,7 +557,7 @@
       "year": 2024,
       "selection": 201,
       "team": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/11?lang=en&region=us"
+        "$ref": "http://example.com/seasons/2024/teams/11?lang=en&region=us"
       }
     },
     "status": {
@@ -568,7 +568,7 @@
     }
   },
   "athletes/2": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2?lang=en&region=us",
+    "$ref": "http://example.com/seasons/2024/athletes/2?lang=en&region=us",
     "id": "2",
     "uid": "s:20~l:28~a:2",
     "guid": "91c43acb-8c57-fa92-d6e8-6fcaa85a71ac",
@@ -667,37 +667,37 @@
     },
     "jersey": "48",
     "position": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us",
+      "$ref": "http://example.com/positions/1?lang=en&region=us",
       "id": "1",
       "name": "Wide Receiver",
       "displayName": "Wide Receiver",
       "abbreviation": "WR",
       "leaf": true,
       "parent": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+        "$ref": "http://example.com/positions/70?lang=en&region=us"
       }
     },
     "injuries": [],
     "linked": true,
     "team": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/teams/4?lang=en&region=us"
     },
     "teams": [
       {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/4?lang=en&region=us"
+        "$ref": "http://example.com/seasons/2024/teams/4?lang=en&region=us"
       }
     ],
     "statistics": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/athletes/2/statistics?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/athletes/2/statistics?lang=en&region=us"
     },
     "projections": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/athletes/2/projections?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/types/2/athletes/2/projections?lang=en&region=us"
     },
     "notes": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2/notes?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/athletes/2/notes?lang=en&region=us"
     },
     "contracts": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/2/contracts?lang=en&region=us"
+      "$ref": "http://example.com/athletes/2/contracts?lang=en&region=us"
     },
     "experience": {
       "years": 3
@@ -707,7 +707,7 @@
     },
     "active": true,
     "eventLog": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2/eventlog?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/athletes/2/eventlog?lang=en&region=us"
     },
     "status": {
       "id": "1",
@@ -717,11 +717,11 @@
     }
   },
   "athletes/1/eventlog": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/1/eventlog?lang=en&region=us",
+    "$ref": "http://example.com/seasons/2024/athletes/1/eventlog?lang=en&region=us",
     "teams": {
       "1": {
         "team": {
-          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1?lang=en&region=us"
+          "$ref": "http://example.com/seasons/2024/teams/1?lang=en&region=us"
         },
         "id": "1"
       }
@@ -734,23 +734,23 @@
       "items": [
         {
           "event": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1?lang=en&region=us"
+            "$ref": "http://example.com/events/1?lang=en&region=us"
           },
           "competition": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1/competitions/1?lang=en&region=us"
+            "$ref": "http://example.com/events/1/competitions/1?lang=en&region=us"
           },
           "statistics": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1/competitions/1/competitors/1/roster/1/statistics/0?lang=en&region=us"
+            "$ref": "http://example.com/events/1/competitions/1/competitors/1/roster/1/statistics/0?lang=en&region=us"
           },
           "teamId": "1",
           "played": true
         },
         {
           "event": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/2?lang=en&region=us"
+            "$ref": "http://example.com/events/2?lang=en&region=us"
           },
           "competition": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/2/competitions/2?lang=en&region=us"
+            "$ref": "http://example.com/events/2/competitions/2?lang=en&region=us"
           },
           "teamId": "1",
           "played": false
@@ -759,11 +759,11 @@
     }
   },
   "athletes/2/eventlog": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/2/eventlog?lang=en&region=us",
+    "$ref": "http://example.com/seasons/2024/athletes/2/eventlog?lang=en&region=us",
     "teams": {
       "1": {
         "team": {
-          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/1?lang=en&region=us"
+          "$ref": "http://example.com/seasons/2024/teams/1?lang=en&region=us"
         },
         "id": "1"
       }
@@ -776,23 +776,23 @@
       "items": [
         {
           "event": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1?lang=en&region=us"
+            "$ref": "http://example.com/events/1?lang=en&region=us"
           },
           "competition": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1/competitions/1?lang=en&region=us"
+            "$ref": "http://example.com/events/1/competitions/1?lang=en&region=us"
           },
           "statistics": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1/competitions/1/competitors/1/roster/2/statistics/0?lang=en&region=us"
+            "$ref": "http://example.com/events/1/competitions/1/competitors/1/roster/2/statistics/0?lang=en&region=us"
           },
           "teamId": "1",
           "played": true
         },
         {
           "event": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/2?lang=en&region=us"
+            "$ref": "http://example.com/events/2?lang=en&region=us"
           },
           "competition": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/2/competitions/2?lang=en&region=us"
+            "$ref": "http://example.com/events/2/competitions/2?lang=en&region=us"
           },
           "teamId": "1",
           "played": false
@@ -801,9 +801,9 @@
     }
   },
   "events/1/competitions/1/competitors/1/roster/1/statistics/0": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1/competitions/1/competitors/1/roster/1/statistics/0?lang=en&region=us",
+    "$ref": "http://example.com/events/1/competitions/1/competitors/1/roster/1/statistics/0?lang=en&region=us",
     "competition": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671715/competitions/401671715?lang=en&region=us"
+      "$ref": "http://example.com/events/401671715/competitions/401671715?lang=en&region=us"
     },
     "splits": {
       "id": "0",
@@ -1542,13 +1542,13 @@
       ]
     },
     "athlete": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/3953687?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/athletes/3953687?lang=en&region=us"
     }
   },
   "events/1/competitions/1/competitors/1/roster/2/statistics/0": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/1/competitions/1/competitors/1/roster/2/statistics/0?lang=en&region=us",
+    "$ref": "http://example.com/events/1/competitions/1/competitors/1/roster/2/statistics/0?lang=en&region=us",
     "competition": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671855/competitions/401671855?lang=en&region=us"
+      "$ref": "http://example.com/events/401671855/competitions/401671855?lang=en&region=us"
     },
     "splits": {
       "id": "0",
@@ -4114,7 +4114,7 @@
       ]
     },
     "athlete": {
-      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/4595348?lang=en&region=us"
+      "$ref": "http://example.com/seasons/2024/athletes/4595348?lang=en&region=us"
     }
   }
 }

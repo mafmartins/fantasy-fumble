@@ -54,4 +54,7 @@ Rails.application.configure do
   # Disable logging.
   config.logger = Logger.new(STDOUT)
   config.log_level = :error
+
+  # ESPN Client configuration.
+  config.espn_api_base_url = "https://example.com"
 end

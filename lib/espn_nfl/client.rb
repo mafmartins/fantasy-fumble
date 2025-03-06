@@ -10,7 +10,7 @@ module EspnNfl
   class Client
     attr_reader :groups_path, :positions_path
 
-    BASE_URL = "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl"
+    BASE_URL = Rails.configuration.espn_api_base_url
 
     ##
     # Constructor
