@@ -1,6 +1,6 @@
 {
   "half_ppr": {
-    "offensive": {
+    "offense": {
       "passing_yards": 0.04,
       "passing_touchdowns": 4,
       "interceptions": -2,
@@ -15,9 +15,9 @@
     "kicking": {
       "extra_points": 1,
       "extra_points_missed": -3,
-      "field_goals_made_1_39": 3,
-      "field_goals_made_40_49": 4,
-      "field_goals_made_50+": 5,
+      "field_goals_made1_39": 3,
+      "field_goals_made40_49": 4,
+      "field_goals_made50plus": 5,
       "field_goals_missed": -1
     },
     "defense": {
@@ -38,7 +38,7 @@
     }
   },
   "ppr": {
-    "offensive": {
+    "offense": {
       "passing_yards": 0.04,
       "passing_touchdowns": 4,
       "interceptions": -2,
@@ -53,10 +53,10 @@
     "kicking": {
       "extra_points": 1,
       "extra_points_missed": -3,
-      "field_goals_made_1_39": 3,
-      "field_goals_made_40_49": 4,
-      "field_goals_made_50+": 5,
-      "fields_goals_missed": -1
+      "field_goals_made1_39": 3,
+      "field_goals_made40_49": 4,
+      "field_goals_made50plus": 5,
+      "field_goals_missed": -1
     },
     "defense": {
       "sacks": 1,
@@ -76,7 +76,7 @@
     }
   },
   "standard": {
-    "offensive": {
+    "offense": {
       "passing_yards": 0.04,
       "passing_touchdowns": 4,
       "interceptions": -2,
@@ -90,10 +90,10 @@
     "kicking": {
       "extra_points": 1,
       "extra_points_missed": -3,
-      "field_goals_made_1_39": 3,
-      "field_goals_made_40_49": 4,
-      "field_goals_made_50+": 5,
-      "fields_goals_missed": -1
+      "field_goals_made1_39": 3,
+      "field_goals_made40_49": 4,
+      "field_goals_made50plus": 5,
+      "field_goals_missed": -1
     },
     "defense": {
       "sacks": 1,

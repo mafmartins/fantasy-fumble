@@ -372,5 +372,13 @@ module EspnNfl
     def get_id_from_athlete_ref(ref)
       ref.match(/athletes\/(\d+)/)[1].to_i
     end
+
+    ##
+    # Retrieves the ESPN ID from an event ref
+    # @param [String] ref
+    # @return [Integer]
+    def get_id_from_event_ref(ref)
+      ref.match(/events\/(\d+)/)[1].to_i
+    end
   end
 end

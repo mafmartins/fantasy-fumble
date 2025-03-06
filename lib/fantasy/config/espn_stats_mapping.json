@@ -3,14 +3,14 @@
     "passing_yards": {
       "espn_category_name": "passing",
       "category_display_name": "Passing",
-      "espn_stats_names": ["passingYards"],
+      "espn_stats_names": ["passing_yards"],
       "display_name": "Passing Yards",
       "abbreviation": "YDS"
     },
     "passing_touchdowns": {
       "espn_category_name": "passing",
       "category_display_name": "Passing",
-      "espn_stats_names": ["passingTouchdowns"],
+      "espn_stats_names": ["passing_touchdowns"],
       "display_name": "Passing Touchdowns",
       "abbreviation": "PTD"
     },
@@ -24,28 +24,28 @@
     "rushing_yards": {
       "espn_category_name": "rushing",
       "category_display_name": "Rushing",
-      "espn_stats_names": ["rushingYards"],
+      "espn_stats_names": ["rushing_yards"],
       "display_name": "Rushing Yards",
       "abbreviation": "YDS"
     },
     "rushing_touchdowns": {
       "espn_category_name": "rushing",
       "category_display_name": "Rushing",
-      "espn_stats_names": ["rushingTouchdowns"],
+      "espn_stats_names": ["rushing_touchdowns"],
       "display_name": "Rushing Touchdowns",
       "abbreviation": "TD"
     },
     "receiving_yards": {
       "espn_category_name": "receiving",
       "category_display_name": "Receiving",
-      "espn_stats_names": ["receivingYards"],
+      "espn_stats_names": ["receiving_yards"],
       "display_name": "Receiving Yards",
       "abbreviation": "YDS"
     },
     "receiving_touchdowns": {
       "espn_category_name": "receiving",
       "category_display_name": "Receiving",
-      "espn_stats_names": ["receivingTouchdowns"],
+      "espn_stats_names": ["receiving_touchdowns"],
       "display_name": "Receiving Touchdowns",
       "abbreviation": "TD"
     },
@@ -59,14 +59,14 @@
     "fumbles_lost": {
       "espn_category_name": "general",
       "category_display_name": "General",
-      "espn_stats_names": ["fumblesLost"],
+      "espn_stats_names": ["fumbles_lost"],
       "display_name": "Fumbles Lost",
       "abbreviation": "FL"
     },
     "fumbles_touchdowns": {
       "espn_category_name": "general",
       "category_display_name": "General",
-      "espn_stats_names": ["fumblesTouchdowns"],
+      "espn_stats_names": ["fumbles_touchdowns"],
       "display_name": "Fumbles Touchdowns",
       "abbreviation": "FTD"
     }
@@ -75,46 +75,46 @@
     "extra_points": {
       "espn_category_name": "kicking",
       "category_display_name": "Kicking",
-      "espn_stats_names": ["extraPointsMade"],
+      "espn_stats_names": ["extra_points_made"],
       "display_name": "Extra Points Made",
       "abbreviation": "XPM"
     },
     "extra_points_missed": {
       "espn_category_name": "kicking",
       "category_display_name": "Kicking",
-      "espn_stats_names": ["extraPointAttempts", "-extraPointsMade"],
+      "espn_stats_names": ["extra_point_attempts", "-extra_points_made"],
       "display_name": "Extra Points Missed",
       "abbreviation": "XPM"
     },
-    "field_goals_made_1_39": {
+    "field_goals_made1_39": {
       "espn_category_name": "kicking",
       "category_display_name": "Kicking",
       "espn_stats_names": [
-        "fieldGoalsMade1_19",
-        "fieldGoalsMade20_29",
-        "fieldGoalsMade30_39"
+        "field_goals_made1_19",
+        "field_goals_made20_29",
+        "field_goals_made30_39"
       ],
       "display_name": "Field Goals Made",
       "abbreviation": "FGM39"
     },
-    "field_goals_made_40_49": {
+    "field_goals_made40_49": {
       "espn_category_name": "kicking",
       "category_display_name": "Kicking",
-      "espn_stats_names": ["fieldGoalsMade40_49"],
+      "espn_stats_names": ["field_goals_made40_49"],
       "display_name": "Field Goals Made",
       "abbreviation": "FGM49"
     },
-    "field_goals_made_50+": {
+    "field_goals_made50plus": {
       "espn_category_name": "kicking",
       "category_display_name": "Kicking",
-      "espn_stats_names": ["fieldGoalsMade50"],
+      "espn_stats_names": ["field_goals_made50"],
       "display_name": "Field Goals Made",
       "abbreviation": "FGM50+"
     },
     "field_goals_missed": {
       "espn_category_name": "kicking",
       "category_display_name": "Kicking",
-      "espn_stats_names": ["fieldGoalAttempts", "-fieldGoalsMade"],
+      "espn_stats_names": ["field_goal_attempts", "-field_goals_made"],
       "display_name": "Field Goals Missed",
       "abbreviation": "FGM"
     }
@@ -137,14 +137,14 @@
     "fumbles_recovered": {
       "espn_category_name": "general",
       "category_display_name": "Defense",
-      "espn_stats_names": ["fumblesRecovered"],
+      "espn_stats_names": ["fumbles_recovered"],
       "display_name": "Fumbles Recovered",
       "abbreviation": "FR"
     },
     "touchdowns": {
       "espn_category_name": "defensive",
       "category_display_name": "Defense",
-      "espn_stats_names": ["defensiveTouchdowns"],
+      "espn_stats_names": ["defensive_touchdowns"],
       "display_name": "Touchdowns",
       "abbreviation": "TD"
     },
@@ -158,7 +158,7 @@
     "points_allowed": {
       "espn_category_name": "defensive",
       "category_display_name": "Defense",
-      "espn_stats_names": ["pointsAllowed"],
+      "espn_stats_names": ["points_allowed"],
       "display_name": "Points Allowed",
       "abbreviation": "PA"
     }

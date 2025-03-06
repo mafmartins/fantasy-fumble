@@ -92,6 +92,11 @@ module EspnNflClientHttpMock
       responses["events/1/competitions/1/competitors/1/roster/1/statistics/0"].to_json
     when /events\/1\/competitions\/1\/competitors\/1\/roster\/2\/statistics/
       responses["events/1/competitions/1/competitors/1/roster/2/statistics/0"].to_json
+    # PointsCalculatorController
+    when /events\/401671805\/competitions\/401671805\/competitors\/99\/roster\/3929630\/statistics/
+      responses["events/1/competitions/1/competitors/1/roster/1/statistics/0"].to_json
+    when /events\/401671712\/competitions\/401671712\/competitors\/99\/roster\/4595348\/statistics/
+      responses["events/1/competitions/1/competitors/1/roster/2/statistics/0"].to_json
     else
       {}.to_json
     end

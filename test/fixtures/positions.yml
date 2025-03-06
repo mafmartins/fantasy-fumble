@@ -2,7 +2,7 @@
 
 offense:
   espn_id: 70
-  abbreviation: OFF
+  abbreviation: "OFF"
   name: Offense
   is_active: true
   parent_id: null
@@ -11,5 +11,12 @@ wide_receiver:
   espn_id: 1
   abbreviation: WR
   name: Wide Receiver
+  is_active: true
+  parent_id: <%= ActiveRecord::FixtureSet.identify(:offense) %>
+
+kicker:
+  espn_id: 2
+  abbreviation: K
+  name: Kicker
   is_active: true
   parent_id: <%= ActiveRecord::FixtureSet.identify(:offense) %>
