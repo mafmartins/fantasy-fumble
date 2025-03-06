@@ -20,7 +20,7 @@ module Fantasy
       when "K"
         points_category = :kicking
       else
-        points_category = :defense
+        points_category = :defense # TODO Missing tests
       end
 
       @points_systems[@points_system_type][points_category].each_with_object({}) do |(name, value), h|
